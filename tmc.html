@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="pageTitle">
+      Tiba Med Center - TMC | NBIG Developments
+    </title>
+    <link rel="icon" href="images/logo.png" />
+    <meta
+      name="description"
+      data-translate="metaDescription"
+      content="Tiba Med Center (TMC) by NBIG Developments – An integrated destination for specialized medical clinics and commercial spaces in 6th of October."
+    />
+    <meta
+      name="keywords"
+      data-translate="metaKeywords"
+      content="Tiba Med Center, TMC, Medical Clinics, NBIG Developments, 6th of October, Healthcare Real Estate, Medical Mall"
+    />
+    <meta name="author" content="NBIG Developments" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nbig.com/tmc.html" />
+
+    <meta
+      property="og:title"
+      data-translate="ogTitle"
+      content="Tiba Med Center - TMC"
+    />
+    <meta
+      property="og:description"
+      data-translate="ogDescription"
+      content="An integrated medical mall combining clinics and commercial spaces in 6th of October by NBIG Developments."
+    />
+    <meta property="og:image" content="https://nbig.com/images/tmc.jpg" />
+    <meta property="og:url" content="https://nbig.com/tmc.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Tiba Med Center",
+        "description": "A comprehensive medical and commercial hub in 6th of October City, Egypt.",
+        "developer": {
+          "@type": "Organization",
+          "name": "NBIG Developments"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "6th of October City",
+          "addressCountry": "EG"
+        },
+        "telephone": "+201112221121",
+        "url": "https://nbig.com/tmc.html"
+      }
+    </script>
+
+    <link rel="preload" href="css/nbig_optimized.css" as="style" />
+    <link rel="preload" href="css/projects.css" as="style" />
+    <link rel="preload" href="images/tmc.jpg" as="image" />
+    <link rel="preload" href="images/tmc 1.jpg" as="image" />
+    <link rel="preload" href="images/tmc 1 1.jpg" as="image" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/nbig.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .language-switcher {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: 20px;
+      }
+      .language-switcher button {
+        background: none;
+        border: 2px solid #0056b3;
+        color: #0056b3;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: bold;
+      }
+      .language-switcher button:hover {
+        background-color: #0056b3;
+        color: white;
+      }
+      .language-switcher button.active {
+        background-color: #0056b3;
+        color: white;
+      }
+      [dir="rtl"] .language-switcher {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+
+      .social-bar-simple {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 5px;
+        background-color: white;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .social-bar-simple a {
+        color: #1a1a1a;
+        font-size: 20px;
+        text-align: center;
+        line-height: 1;
+        transition: color 0.3s;
+      }
+      .social-bar-simple a:hover {
+        color: #d4af37;
+      }
+      .mobile-social-bar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 450px;
+        display: none;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 10px;
+        background-color: #ffffff;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+      .mobile-social-bar .social-icon {
+        color: #003399;
+        font-size: 24px;
+        transition: color 0.3s ease;
+      }
+      .mobile-social-bar .social-icon:hover {
+        color: #d4af37;
+      }
+      .mobile-social-bar .bulb-icon {
+        position: absolute;
+        top: -20px;
+        color: #d4af37;
+        font-size: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .social-bar-simple {
+          display: none;
+        }
+        .mobile-social-bar {
+          display: flex;
+        }
+      }
+      @media (min-width: 769px) {
+        .mobile-social-bar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader-overlay">
+      <div class="loader-logo">
+        <img src="images/logo.png" alt="NBIG Logo" width="80" height="80" />
+        <span class="loader-spinner"></span>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container">
+        <a href="index.html">
+          <img
+            class="logo"
+            src="images/logo.png"
+            alt="NBIG Developments Logo"
+            width="130"
+          />
+        </a>
+        <nav class="links" aria-label="Main navigation">
+          <button
+            class="menu-toggle"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <ul class="nav-menu">
+            <li>
+              <a href="index.html#services" data-translate="navServices"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="index.html#portfolio" data-translate="navProjects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="index.html#about" data-translate="navAbout">About Us</a>
+            </li>
+            <li>
+              <a href="index.html#contact" data-translate="navContact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="language-switcher">
+          <button id="lang-en" class="active">EN</button>
+          <button id="lang-ar">AR</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="vision-hero">
+        <div class="vision-hero-container">
+          <div class="vision-hero-info">
+            <h1 class="project-title" data-translate="heroTitle">
+              TMC - Tiba Med Center
+            </h1>
+            <p class="project-subtitle" data-translate="heroSubtitle">
+              The first integrated medical mall combining specialized clinics
+              and commercial spaces
+            </p>
+            <div class="project-meta">
+              <span
+                ><i class="fas fa-map-marker-alt"></i>
+                <a
+                  href="https://maps.app.goo.gl/GdDqT9ijwYDHw3YT6"
+                  target="_blank"
+                  data-translate="location"
+                  >6th of October</a
+                ></span
+              >
+              <span
+                ><i class="fas fa-clinic-medical"></i>
+                <span data-translate="projectType"
+                  >Medical Clinics & Commercial Spaces</span
+                ></span
+              >
+              <span
+                ><i class="fas fa-star"></i>
+                <span data-translate="quality">Premium Quality</span></span
+              >
+            </div>
+            <div class="hero-cta">
+              <a
+                href="tel:19938"
+                class="cta-btn primary"
+                data-translate="callNowBtn"
+                ><i class="fas fa-phone"></i> Call Now</a
+              >
+              <a
+                href="https://wa.me/201112221121"
+                target="_blank"
+                class="cta-btn secondary"
+                data-translate="whatsappBtn"
+                ><i class="fab fa-whatsapp"></i> WhatsApp</a
+              >
+            </div>
+          </div>
+          <div class="vision-hero-img">
+            <img
+              src="images/ZX 01.jpg"
+              alt="Tiba Med Center Front"
+              loading="eager"
+              width="500"
+              height="400"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="vision-section">
+        <div class="split-section">
+          <div class="vision-content">
+            <h2 data-translate="overviewTitle">Project Overview</h2>
+            <p data-translate="overviewText1">
+              Tiba Med Center (TMC) is the first integrated medical mall in the
+              area, combining specialized medical clinics and diverse commercial
+              spaces. Developed by NBIG Developments, with over 13 years of
+              experience in residential, commercial, and administrative projects
+              in Egypt and the UAE. The project aims to meet the needs of
+              doctors, investors, patients, and visitors.
+            </p>
+            <ul>
+              <li data-translate="overviewListItem1">
+                Strategic location and modern design.
+              </li>
+              <li data-translate="overviewListItem2">
+                Unique experience combining healthcare and shopping.
+              </li>
+              <li data-translate="overviewListItem3">
+                Includes 50 medical clinics, a pharmacy, and 2 labs.
+              </li>
+              <li data-translate="overviewListItem4">
+                Features a radiology center, mini market, and café.
+              </li>
+            </ul>
+          </div>
+          <div class="vision-img">
+            <img
+              src="images/ZX 02.jpg"
+              alt="Tiba Med Center Building"
+              loading="lazy"
+              width="450"
+              height="350"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="vision-section section-bg">
+        <div class="container">
+          <div
+            class="vision-content"
+            style="text-align: center; margin-bottom: 50px"
+          >
+            <h2 data-translate="featuresTitle">Features & Facilities</h2>
+            <p data-translate="featuresDesc">
+              The project offers services and facilities designed for the
+              comfort of doctors, patients, and visitors.
+            </p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <i class="fas fa-mobile-alt"></i>
+              <h3 data-translate="feature1Title">Integrated Mobile App</h3>
+              <p data-translate="feature1Desc">
+                For easy appointment booking, remote consultations, and medical
+                records tracking.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-clinic-medical"></i>
+              <h3 data-translate="feature2Title">Equipped Clinics</h3>
+              <p data-translate="feature2Desc">
+                Fully finished and air-conditioned clinics for all medical
+                specialties.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-concierge-bell"></i>
+              <h3 data-translate="feature3Title">Central Reception</h3>
+              <p data-translate="feature3Desc">
+                Central reception on each floor for easy access for patients and
+                visitors.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-car"></i>
+              <h3 data-translate="feature4Title">Parking Spaces</h3>
+              <p data-translate="feature4Desc">
+                Parking and waiting areas for easy access.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-wifi"></i>
+              <h3 data-translate="feature5Title">Central Wi-Fi</h3>
+              <p data-translate="feature5Desc">
+                High-speed internet network covering the entire mall.
+              </p>
+            </div>
+            <div class="feature-card">
+              <i class="fas fa-shield-alt"></i>
+              <h3 data-translate="feature6Title">Sound & Dust Insulation</h3>
+              <p data-translate="feature6Desc">
+                Fully insulated facades for a quiet and clean environment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="vision-section">
+        <div class="split-section reverse-row">
+          <div class="vision-content">
+            <h2 data-translate="locationTitle">Strategic Location</h2>
+            <h3 data-translate="locationSubtitle">6th of October City</h3>
+            <p data-translate="locationDesc">
+              Tiba Med Center is located in 6th of October City, behind Mall of
+              Arabia and Gamal Abdel Nasser Axis. The project is in the clubs
+              and palaces area, steps away from the tourist walkway and Gamal
+              Abdel Nasser Axis. It is next to the largest residential complexes
+              and surrounded by more than 35 compounds.
+            </p>
+            <ul>
+              <li data-translate="locationListItem1">
+                Near Mall of Arabia, 6th of October Club, and Shooting Club.
+              </li>
+              <li data-translate="locationListItem2">
+                Close to Boulevard Axis and July 26 Axis.
+              </li>
+              <li data-translate="locationListItem3">
+                Near universities and schools like MUST.
+              </li>
+              <li data-translate="locationListItem4">
+                Location ensures easy access and high demand for services.
+              </li>
+            </ul>
+          </div>
+          <div class="vision-img">
+            <img
+              src="images/ZX 03.jpg"
+              alt="Tiba Med Center Location Map"
+              loading="lazy"
+              width="450"
+              height="350"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="vision-section section-bg">
+        <div class="split-section">
+          <div class="vision-content">
+            <h2 data-translate="unitsAndServicesTitle">
+              Units & Medical Services
+            </h2>
+            <p data-translate="unitsAndServicesDesc">
+              The project features a variety of units and facilities to meet all
+              medical and commercial needs.
+            </p>
+            <ul>
+              <li data-translate="unitsAndServicesItem1">
+                Number of medical clinics: 50 clinics.
+              </li>
+              <li data-translate="unitsAndServicesItem2">
+                Integrated pharmacy.
+              </li>
+              <li data-translate="unitsAndServicesItem3">
+                Radiology center and two labs.
+              </li>
+              <li data-translate="unitsAndServicesItem4">
+                Commercial units with different spaces.
+              </li>
+              <li data-translate="unitsAndServicesItem5">
+                Fitness and wellness center.
+              </li>
+            </ul>
+          </div>
+          <div class="vision-img">
+            <img
+              src="images/ZX 04.jpg"
+              alt="Tiba Med Center Front"
+              loading="lazy"
+              width="450"
+              height="350"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="pdf-section">
+        <div class="map-container">
+          <div class="map-header">
+            <h2 data-translate="brochureTitle">Project Brochure</h2>
+            <p data-translate="brochureDesc">
+              Download the full Tiba Med Center brochure in PDF format
+            </p>
+          </div>
+          <div class="map-wrapper">
+            <a
+              href="pdf/TMC - PROFILE.pdf"
+              target="_blank"
+              style="display: block; text-decoration: none"
+            >
+              <img
+                src="images/cmc-pdf-thumbnail.jpg"
+                alt="TMC Brochure Thumbnail"
+                style="width: 100%; height: auto; display: block"
+              />
+            </a>
+          </div>
+          <div class="map-actions">
+            <a
+              href="pdf/TMC - PROFILE.pdf"
+              target="_blank"
+              class="btn btn-primary"
+              data-translate="viewPdfBtn"
+            >
+              <i class="fas fa-file-pdf"></i> View PDF
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2 data-translate="ctaTitle">Ready to launch your clinic?</h2>
+          <p data-translate="ctaDesc">
+            Contact us today to learn more about Tiba Med Center and secure your
+            space. Invest in a property that combines healthcare and shopping in
+            a modern tech environment.
+          </p>
+          <div class="cta-buttons">
+            <a href="tel:19938" class="cta-btn" data-translate="ctaCallBtn"
+              ><i class="fas fa-phone"></i> Call Now</a
+            >
+            <a
+              href="https://wa.me/201112221121"
+              target="_blank"
+              class="cta-btn"
+              data-translate="ctaWhatsAppBtn"
+              ><i class="fab fa-whatsapp"></i> WhatsApp</a
+            >
+            <a
+              href="index.html#contact"
+              class="cta-btn"
+              data-translate="ctaContactBtn"
+              ><i class="fas fa-envelope"></i> Contact Us</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="social-bar-simple">
+      <a href="https://www.facebook.com/nbigdevelopments" target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a href="https://www.instagram.com/nbigdevelopments/" target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank"
+        ><i class="fab fa-youtube"></i
+      ></a>
+      <a href="https://wa.me/201112221121" target="_blank"
+        ><i class="fab fa-whatsapp"></i
+      ></a>
+      <a href="tel:19938"><i class="fas fa-phone"></i></a>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p data-translate="copyright">
+          © 2025 NBIG Developments. All rights reserved. |
+          <a href="index.html">Back to Home</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/animations.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script>
+      // Simple translation system
+      const translations = {
+        ar: {
+          pageTitle: "مركز طيبة الطبي - TMC | ان بي اي جي للتطوير",
+          metaDescription:
+            "مركز طيبة الطبي (TMC) من ان بي اي جي للتطوير – وجهة متكاملة للعيادات الطبية المتخصصة والمساحات التجارية في 6 أكتوبر.",
+          metaKeywords:
+            "مركز طيبة الطبي, TMC, عيادات طبية, ان بي اي جي للتطوير, 6 أكتوبر, عقارات رعاية صحية, مركز تجاري طبي",
+          ogTitle: "مركز طيبة الطبي - TMC",
+          ogDescription:
+            "مركز تجاري طبي متكامل يجمع بين العيادات الطبية والمساحات التجارية في 6 أكتوبر من ان بي اي جي للتطوير.",
+          navServices: "الخدمات",
+          navProjects: "المشاريع",
+          navAbout: "عن الشركة",
+          navContact: "اتصل بنا",
+          heroTitle: "مركز طيبة الطبي - TMC",
+          heroSubtitle:
+            "أول مول طبي تجاري متكامل يجمع بين العيادات المتخصصة والمساحات التجارية",
+          location: "6 أكتوبر",
+          projectType: "عيادات طبية ومساحات تجارية",
+          quality: "جودة ممتازة",
+          callNowBtn: "اتصل الآن",
+          whatsappBtn: "واتساب",
+          overviewTitle: "نظرة عامة على المشروع",
+          overviewText1:
+            "مركز طيبة الطبي (TMC) هو أول مول طبي تجاري متكامل في المنطقة يجمع بين العيادات الطبية المتخصصة والمساحات التجارية المتنوعة. تم تطويره بواسطة شركة NBIG Developments، التي تمتلك أكثر من 13 عامًا من الخبرة في تصميم وتنفيذ المشروعات السكنية والتجارية والإدارية في مصر والإمارات. يهدف المشروع إلى تلبية احتياجات الأطباء والمستثمرين والمرضى والزوار.",
+          overviewListItem1: "يقع في موقع استراتيجي وتصميم عصري.",
+          overviewListItem2:
+            "يوفر تجربة فريدة تجمع بين الرعاية الصحية والتسوق.",
+          overviewListItem3: "يضم 50 عيادة طبية، صيدلية، و2 معمل تحاليل.",
+          overviewListItem4: "يوجد به مركز أشعة وميني ماركت وكافيه.",
+          featuresTitle: "الميزات والمرافق",
+          featuresDesc:
+            "يقدم المشروع خدمات ومرافق مصممة لراحة الأطباء والمرضى والزوار.",
+          feature1Title: "تطبيق جوال متكامل",
+          feature1Desc:
+            "لتسهيل حجز المواعيد والاستشارات عن بعد ومتابعة السجلات الطبية.",
+          feature2Title: "عيادات مجهزة",
+          feature2Desc:
+            "عيادات كاملة التشطيب ومكيفة لتناسب جميع التخصصات الطبية.",
+          feature3Title: "استقبال مركزي",
+          feature3Desc:
+            "استقبال مركزي في كل طابق لتسهيل الوصول للمرضى والزوار.",
+          feature4Title: "مواقف سيارات",
+          feature4Desc: "مواقف وساحات انتظار لضمان سهولة الوصول.",
+          feature5Title: "واي فاي مركزي",
+          feature5Desc: "شبكة إنترنت عالية السرعة تغطي المول بالكامل.",
+          feature6Title: "عزل صوت وغبار",
+          feature6Desc: "واجهات معزولة بالكامل للحفاظ على بيئة هادئة ونظيفة.",
+          locationTitle: "الموقع الاستراتيجي",
+          locationSubtitle: "مدينة 6 أكتوبر",
+          locationDesc:
+            "يقع مركز طيبة الطبي في مدينة 6 أكتوبر، خلف مول العرب ومحور جمال عبد الناصر. يقع المشروع في منطقة النوادي والقصور، على بعد خطوات من الممشى السياحي، ومحور جمال عبد الناصر. كما أنه يقع بجوار أكبر المجمعات السكنية ويحيط به أكثر من 35 كمبوند سكني.",
+          locationListItem1: "بالقرب من مول العرب ونادي 6 أكتوبر ونادي الصيد.",
+          locationListItem2: "قريب من محور البوليفارد ومحور 26 يوليو.",
+          locationListItem3:
+            "بالقرب من جامعات ومدارس مثل جامعة مصر للعلوم والتكنولوجيا.",
+          locationListItem4: "موقع يضمن سهولة الوصول وزيادة الطلب على الخدمات.",
+          unitsAndServicesTitle: "الوحدات والخدمات الطبية",
+          unitsAndServicesDesc:
+            "يتميز المشروع بتنوع وحداته ومرافقه لتلبية كافة الاحتياجات الطبية والتجارية.",
+          unitsAndServicesItem1: "عدد العيادات الطبية: 50 عيادة.",
+          unitsAndServicesItem2: "صيدلية متكاملة.",
+          unitsAndServicesItem3: "مركز أشعة ومعملان للتحاليل الطبية.",
+          unitsAndServicesItem4: "وحدات تجارية بمساحات مختلفة.",
+          unitsAndServicesItem5: "مركز لياقة بدنية وصحة.",
+          brochureTitle: "كتيب المشروع",
+          brochureDesc:
+            "تنزيل الملف التعريفي الكامل لمشروع مركز طيبة الطبي بصيغة PDF",
+          viewPdfBtn: "عرض PDF",
+          ctaTitle: "جاهز لإطلاق عيادتك الطبية؟",
+          ctaDesc:
+            "اتصل بنا اليوم لمعرفة المزيد عن مركز طيبة الطبي وتأمين مساحتك. استثمر في عقار يجمع بين الرعاية الصحية والتسوق في بيئة تكنولوجية متطورة.",
+          ctaCallBtn: "اتصل الآن",
+          ctaWhatsAppBtn: "واتساب",
+          ctaContactBtn: "اتصل بنا",
+          copyright:
+            "© 2025 NBIG Developments. جميع الحقوق محفوظة. | <a href='index.html'>العودة إلى الصفحة الرئيسية</a>",
+        },
+        en: {
+          pageTitle: "Tiba Med Center - TMC | NBIG Developments",
+          metaDescription:
+            "Tiba Med Center (TMC) by NBIG Developments – An integrated destination for specialized medical clinics and commercial spaces in 6th of October.",
+          metaKeywords:
+            "Tiba Med Center, TMC, Medical Clinics, NBIG Developments, 6th of October, Healthcare Real Estate, Medical Mall",
+          ogTitle: "Tiba Med Center - TMC",
+          ogDescription:
+            "An integrated medical mall combining clinics and commercial spaces in 6th of October by NBIG Developments.",
+          navServices: "Services",
+          navProjects: "Projects",
+          navAbout: "About Us",
+          navContact: "Contact",
+          heroTitle: "TMC - Tiba Med Center",
+          heroSubtitle:
+            "The first integrated medical mall combining specialized clinics and commercial spaces",
+          location: "6th of October",
+          projectType: "Medical Clinics & Commercial Spaces",
+          quality: "Premium Quality",
+          callNowBtn: "Call Now",
+          whatsappBtn: "WhatsApp",
+          overviewTitle: "Project Overview",
+          overviewText1:
+            "Tiba Med Center (TMC) is the first integrated medical mall in the area, combining specialized medical clinics and diverse commercial spaces. Developed by NBIG Developments, with over 13 years of experience in residential, commercial, and administrative projects in Egypt and the UAE. The project aims to meet the needs of doctors, investors, patients, and visitors.",
+          overviewListItem1: "Strategic location and modern design.",
+          overviewListItem2:
+            "Unique experience combining healthcare and shopping.",
+          overviewListItem3:
+            "Includes 50 medical clinics, a pharmacy, and 2 labs.",
+          overviewListItem4:
+            "Features a radiology center, mini market, and café.",
+          featuresTitle: "Features & Facilities",
+          featuresDesc:
+            "The project offers services and facilities designed for the comfort of doctors, patients, and visitors.",
+          feature1Title: "Integrated Mobile App",
+          feature1Desc:
+            "For easy appointment booking, remote consultations, and medical records tracking.",
+          feature2Title: "Equipped Clinics",
+          feature2Desc:
+            "Fully finished and air-conditioned clinics for all medical specialties.",
+          feature3Title: "Central Reception",
+          feature3Desc:
+            "Central reception on each floor for easy access for patients and visitors.",
+          feature4Title: "Parking Spaces",
+          feature4Desc: "Parking and waiting areas for easy access.",
+          feature5Title: "Central Wi-Fi",
+          feature5Desc: "High-speed internet network covering the entire mall.",
+          feature6Title: "Sound & Dust Insulation",
+          feature6Desc:
+            "Fully insulated facades for a quiet and clean environment.",
+          locationTitle: "Strategic Location",
+          locationSubtitle: "6th of October City",
+          locationDesc:
+            "Tiba Med Center is located in 6th of October City, behind Mall of Arabia and Gamal Abdel Nasser Axis. The project is in the clubs and palaces area, steps away from the tourist walkway and Gamal Abdel Nasser Axis. It is next to the largest residential complexes and surrounded by more than 35 compounds.",
+          locationListItem1:
+            "Near Mall of Arabia, 6th of October Club, and Shooting Club.",
+          locationListItem2: "Close to Boulevard Axis and July 26 Axis.",
+          locationListItem3: "Near universities and schools like MUST.",
+          locationListItem4:
+            "Location ensures easy access and high demand for services.",
+          unitsAndServicesTitle: "Units & Medical Services",
+          unitsAndServicesDesc:
+            "The project features a variety of units and facilities to meet all medical and commercial needs.",
+          unitsAndServicesItem1: "Number of medical clinics: 50 clinics.",
+          unitsAndServicesItem2: "Integrated pharmacy.",
+          unitsAndServicesItem3: "Radiology center and two labs.",
+          unitsAndServicesItem4: "Commercial units with different spaces.",
+          unitsAndServicesItem5: "Fitness and wellness center.",
+          brochureTitle: "Project Brochure",
+          brochureDesc:
+            "Download the full Tiba Med Center brochure in PDF format",
+          viewPdfBtn: "View PDF",
+          ctaTitle: "Ready to launch your clinic?",
+          ctaDesc:
+            "Contact us today to learn more about Tiba Med Center and secure your space. Invest in a property that combines healthcare and shopping in a modern tech environment.",
+          ctaCallBtn: "Call Now",
+          ctaWhatsAppBtn: "WhatsApp",
+          ctaContactBtn: "Contact Us",
+          copyright:
+            "© 2025 NBIG Developments. All rights reserved. | <a href='index.html'>Back to Home</a>",
+        },
+      };
+
+      function setLanguage(lang) {
+        document.documentElement.lang = lang === "ar" ? "ar" : "en";
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        document
+          .getElementById("lang-en")
+          .classList.toggle("active", lang === "en");
+        document
+          .getElementById("lang-ar")
+          .classList.toggle("active", lang === "ar");
+        document.querySelectorAll("[data-translate]").forEach((el) => {
+          const key = el.getAttribute("data-translate");
+          if (translations[lang][key]) {
+            if (el.tagName === "TITLE") {
+              document.title = translations[lang][key];
+            } else {
+              el.innerHTML = translations[lang][key];
+            }
+          }
+        });
+        // meta tags
+        document
+          .querySelector('meta[name="description"]')
+          .setAttribute("content", translations[lang].metaDescription);
+        document
+          .querySelector('meta[name="keywords"]')
+          .setAttribute("content", translations[lang].metaKeywords);
+        document
+          .querySelector('meta[property="og:title"]')
+          .setAttribute("content", translations[lang].ogTitle);
+        document
+          .querySelector('meta[property="og:description"]')
+          .setAttribute("content", translations[lang].ogDescription);
+      }
+
+      document.getElementById("lang-en").onclick = () => setLanguage("en");
+      document.getElementById("lang-ar").onclick = () => setLanguage("ar");
+      window.addEventListener("DOMContentLoaded", () => setLanguage("en"));
+
+      window.addEventListener("load", function () {
+        var loader = document.getElementById("loader-overlay");
+        if (loader) loader.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
