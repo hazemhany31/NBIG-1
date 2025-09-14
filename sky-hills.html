@@ -221,6 +221,312 @@
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
+        body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  margin: 0; /* إزالة الهامش الافتراضي */
+  padding: 0;
+}
+
+.container {
+  max-width: 960px; /* لضبط عرض المحتوى على الشاشات الكبيرة */
+  margin: 0 auto; /* لتوسيط المحتوى */
+  padding: 20px;
+}
+
+.files-and-info-section {
+  padding: 40px 0;
+  background-color: #f7f9fc; /* لون خلفية للقسم بأكمله */
+}
+
+/* 1. تنسيقات بطاقة قائمة الملفات (كما في الصورة الصفراء) */
+.file-list-card {
+  background-color: #fff;
+  padding: 30px; /* تقليل البادينغ قليلاً */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px; /* مسافة بين قائمة الملفات والصورة */
+  text-align: center; /* توسيط النصوص */
+}
+
+.file-list-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.file-list-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.file-links-grid {
+  display: grid;
+  /* هنا نقطة القوة: 3 أعمدة دائمًا، حتى على الموبايل */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.file-link {
+  display: flex;
+  flex-direction: column; /* لتصطف "first floor" و "88m" عموديًا */
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1; /* لجعل العنصر مربعًا دائمًا */
+  background-color: #f7f9fc;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-title {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.file-size {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 2. تنسيقات عرض الصورة الكبيرة (أسفل قائمة الملفات) */
+.image-display-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 300px; /* لضمان ارتفاع مناسب للحاوية حتى لو كانت الصورة صغيرة */
+}
+
+.main-display-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* للتأكد من أن الصورة تتناسب تمامًا داخل الحاوية دون تشويه */
+  border-radius: 8px;
+}
+
+/* استجابة الشاشات الصغيرة - مهمة هنا لجعل المربعات تتقلص بشكل جيد */
+@media (max-width: 480px) {
+  .file-list-card {
+    padding: 20px; /* تقليل البادينغ على الشاشات الصغيرة جداً */
+  }
+  .file-links-grid {
+    /* على الشاشات الصغيرة جداً، قد يكون عمودين أفضل، لكن يمكن تركها 3 كما هي */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* تقليل المسافة بين المربعات */
+  }
+  .file-size {
+    font-size: 1rem; /* تصغير حجم الخط */
+  }
+  .file-title {
+    font-size: 0.8rem;
+  }
+}
+/* ------------------------------------------------------------- */
+/* التصميم الأساسي: عمود واحد للهاتف والشاشات الصغيرة        */
+/* ------------------------------------------------------------- */
+
+body {
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.files-and-info-section {
+  padding: 40px 0;
+  background-color: #f7f9fc;
+}
+/* شبكة المميزات: 5 مربعات بجانب بعض */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 36px 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 2px solid transparent;
+}
+.feature-card i {
+  font-size: 2.6rem;
+  color: #0099ff;
+  margin-bottom: 18px;
+}
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #003399;
+  margin-bottom: 10px;
+}
+.feature-card p {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+}
+.feature-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+  border-color: #0099ff;
+  transform: translateY(-4px) scale(1.03);
+}
+/* استجابة الموبايل */
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .feature-card {
+    padding: 20px 10px;
+  }
+}
+
+.file-list-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.file-list-card h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.file-list-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.file-links-grid {
+  display: grid;
+  /* المربعات تظل في 3 أعمدة على جميع الشاشات */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.file-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background-color: #f7f9fc;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.file-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-title {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.file-size {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.image-display-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.main-display-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------------------- */
+/* التصميم الخاص باللاب توب والشاشات الكبيرة           */
+/* ------------------------------------------------------------- */
+
+@media (min-width: 769px) {
+  .container {
+    display: grid;
+    /* تحويل الحاوية لشبكة من عمودين: الملفات على اليسار والصورة على اليمين */
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+  }
+  .file-list-card {
+    /* إلغاء الهامش السفلي لأن العنصرين أصبحا متجاورين */
+    margin-bottom: 0;
+  }
+}
         .mobile-social-bar .social-icon {
             color: #003399;
             font-size: 24px;
@@ -373,6 +679,132 @@
             </div>
         </section>
 
+       <!-- ground floor plans -->
+    <section class="files-and-info-section">
+  <div class="container">
+    <div class="file-list-card">
+      <h2 data-key="groundFloorTitle">File List ground floor</h2>
+      <p data-key="groundFloorDesc">Download floor plans and apartment layouts in PDF format.</p>
+      <!-- الكارد الأول: أول 3 مساحات -->
+      <div class="inner-card" style="background:#f8f8f8;padding:18px;border-radius:12px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;gap:16px;justify-content:center;">
+        <div class="file-links-grid" style="display:flex;gap:16px;">
+          <a href="pdfs/Type 2  ground floor 85 m.pdf" class="file-link" target="_blank">
+            <div class="link-text">
+              <span class="file-title" data-key="groundFloorLabel">ground floor</span>
+              <span class="file-size">85m</span>
+            </div>
+          </a>
+          <a href="pdfs/Type 2  ground floor 88 m.pdf" class="file-link" target="_blank">
+            <div class="link-text">
+              <span class="file-title" data-key="groundFloorLabel">ground floor</span>
+              <span class="file-size">88m</span>
+            </div>
+          </a>
+          <a href="pdfs/Type 2  ground floor 90 m.pdf" class="file-link" target="_blank">
+            <div class="link-text">
+              <span class="file-title" data-key="groundFloorLabel">ground floor</span>
+              <span class="file-size">90m</span>
+            </div>
+          </a>
+        </div>
+        <span data-key="gardenSize50">garden size +50m</span>
+      </div>
+      <!-- الكارد الثاني: المساحتين الباقيين -->
+      <div class="inner-card" style="background:#f8f8f8;padding:18px;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.07);display:flex;gap:16px;justify-content:center;">
+        <div class="file-links-grid" style="display:flex;gap:16px;">
+          <a href="pdfs/Type 2  ground floor 170 m.pdf" class="file-link" target="_blank">
+            <div class="link-text">
+              <span class="file-title" data-key="groundFloorLabel">ground floor</span>
+              <span class="file-size">170m</span>
+            </div>
+          </a>
+          <a href="pdfs/Type 2  ground floor 175 m.pdf" class="file-link" target="_blank">
+            <div class="link-text">
+              <span class="file-title" data-key="groundFloorLabel">ground floor</span>
+              <span class="file-size">175m</span>
+            </div>
+          </a>
+        </div>
+        <span data-key="gardenSize100">garden size +100m</span>
+      </div>
+    </div>
+    <div class="image-display-container">
+      <img src="images/apartment/17.jpg" alt="Apartment layout image" class="main-display-image">
+    </div>
+  </div>
+</section>
+<!-- first floor -->
+<section class="files-and-info-section">
+  <div class="container">
+    <div class="file-list-card">
+      <h2 data-key="firstFloorTitle">File List first floor</h2>
+      <p data-key="firstFloorDesc">Download floor plans and apartment layouts in PDF format.</p>
+      <div class="file-links-grid">
+        <a href="pdfs/Type 2  first floor 88 m.pdf" class="file-link" target="_blank">
+          <div class="link-text">
+            <span class="file-title" data-key="firstFloorLabel">first floor</span>
+            <span class="file-size">88m</span>
+          </div>
+        </a>
+        <a href="pdfs/Type 2  first floor 125 m.pdf" class="file-link" target="_blank">
+          <div class="link-text">
+            <span class="file-title" data-key="firstFloorLabel">first floor</span>
+            <span class="file-size">125m</span>
+          </div>
+        </a>
+        <a href="pdfs/Type 2  first floor 135 m.pdf" class="file-link" target="_blank">
+          <div class="link-text">
+            <span class="file-title" data-key="firstFloorLabel">first floor</span>
+            <span class="file-size">135m</span>
+          </div>
+        </a>
+       
+      </div>
+    </div>
+    <div class="image-display-container">
+      <img src="images/floor.jpg" alt="Apartment layout image" class="main-display-image">
+    </div>
+  </div>
+</section>
+<!-- typical floor -->
+<section class="files-and-info-section">
+  <div class="container">
+    <div class="file-list-card">
+      <h2 data-key="typicalFloorTitle">File List typical floor</h2>
+      <p data-key="typicalFloorDesc">Download floor plans and apartment layouts in PDF format.</p>
+      <div class="file-links-grid">
+        <a href="pdfs/Type 2  typical floor 115 m.pdf" class="file-link" target="_blank">
+          <div class="link-text">
+            <span class="file-title" data-key="typicalFloorLabel">typical floor</span>
+            <span class="file-size">115m</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="image-display-container">
+      <img src="images/apartment/13.jpg" alt="Apartment layout image" class="main-display-image">
+    </div>
+  </div>
+</section>
+<!-- penthouse -->
+<section class="files-and-info-section">
+  <div class="container">
+    <div class="file-list-card">
+      <h2 data-key="penthouseTitle">File List penthouse</h2>
+      <p data-key="penthouseDesc">Download floor plans and apartment layouts in PDF format.</p>
+      <div class="file-links-grid">
+        <a href="pdfs/Type 2 penthouse 185 m.pdf" class="file-link" target="_blank">
+          <div class="link-text">
+            <span class="file-title" data-key="penthouseLabel">penthouse</span>
+            <span class="file-size">185m</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="image-display-container">
+      <img src="images/apartment/17.jpg" alt="Apartment layout image" class="main-display-image">
+    </div>
+  </div>
         <section class="vision-section">
             <div class="split-section">
                 <div class="vision-content">
@@ -392,40 +824,40 @@
             </div>
         </section>
 
-        <section class="vision-section section-bg">
-            <div class="container">
-                <div class="vision-content" style="text-align:center;margin-bottom:50px;">
-                    <h2 data-translate="keyFeaturesTitle">Key Features</h2>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <i class="fas fa-tree"></i>
-                            <h3 data-translate="feature1Title">Green Spaces</h3>
-                            <p data-translate="feature1Desc">Wide green areas offering calm and healthy living.</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-building"></i>
-                            <h3 data-translate="feature2Title">Modern Design</h3>
-                            <p data-translate="feature2Desc">Contemporary architecture with quality finishing.</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-dollar-sign"></i>
-                            <h3 data-translate="feature3Title">Competitive Prices</h3>
-                            <p data-translate="feature3Desc">Affordable prices suitable for all buyers.</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-credit-card"></i>
-                            <h3 data-translate="feature4Title">Flexible Payment</h3>
-                            <p data-translate="feature4Desc">Easy installment plans that facilitate ownership.</p>
-                        </div>
-                        <div class="feature-card">
-                            <i class="fas fa-water"></i>
-                            <h3 data-translate="feature5Title">Artificial Lakes</h3>
-                            <p data-translate="feature5Desc">Beautiful lakes adding luxury and relaxation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <section class="vision-section section-bg">
+  <div class="container">
+    <div class="vision-content" style="text-align:center;margin-bottom:50px;">
+      <h2 data-translate="keyFeaturesTitle">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-tree"></i>
+          <h3 data-translate="feature1Title">Green Spaces</h3>
+          <p data-translate="feature1Desc">Wide green areas offering calm and healthy living.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-building"></i>
+          <h3 data-translate="feature2Title">Modern Design</h3>
+          <p data-translate="feature2Desc">Contemporary architecture with quality finishing.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-dollar-sign"></i>
+          <h3 data-translate="feature3Title">Competitive Prices</h3>
+          <p data-translate="feature3Desc">Affordable prices suitable for all buyers.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-credit-card"></i>
+          <h3 data-translate="feature4Title">Flexible Payment</h3>
+          <p data-translate="feature4Desc">Easy installment plans that facilitate ownership.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-water"></i>
+          <h3 data-translate="feature5Title">Artificial Lakes</h3>
+          <p data-translate="feature5Desc">Beautiful lakes adding luxury and relaxation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         <section class="vision-section">
             <div class="split-section">
