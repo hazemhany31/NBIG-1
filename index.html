@@ -59,25 +59,20 @@
         }
       }
     </script>
+<!-- Preload الخط الرئيسي فقط (Work Sans) -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" as="style" />
 
-    <link rel="preload" href="css/nbig.css" as="style" />
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
-      as="style"
-    />
+<!-- Normalize: تهيئة المتصفحات -->
+<link rel="stylesheet" href="css/normalize.css" />
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/nbig.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+<!-- خطوط Google Fonts: Work Sans -->
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
+<!-- Font Awesome CDN (أحدث إصدار للأداء) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- CSS الرئيسي لمشروعك -->
+<link rel="stylesheet" href="css/nbig.css" />
     <style>
       .language-switcher {
         display: flex;
@@ -200,6 +195,7 @@
           alt="NBIG Developments Logo"
           width="130"
           height="auto"
+          loading="lazy"
         />
         <nav class="links" aria-label="Main navigation">
           <button
@@ -235,6 +231,7 @@
           <img
             src="images/484871684_657128943376706_1775988631967972767_n.jpg"
             alt=""
+            loading="lazy"
           />
           <h1 data-translate="landingTitle">Welcome to NBIG Developments</h1>
           <p data-translate="landingText">
