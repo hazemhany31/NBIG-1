@@ -59,21 +59,110 @@
         }
       }
     </script>
-<!-- Preload الخط الرئيسي فقط (Work Sans) -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" as="style" />
+    <!-- Preload الخط الرئيسي فقط (Work Sans) -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
+      as="style"
+    />
 
-<!-- Normalize: تهيئة المتصفحات -->
-<link rel="stylesheet" href="css/normalize.css" />
+    <!-- Normalize: تهيئة المتصفحات -->
+    <link rel="stylesheet" href="css/normalize.css" />
 
-<!-- خطوط Google Fonts: Work Sans -->
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- خطوط Google Fonts: Work Sans -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- Font Awesome CDN (أحدث إصدار للأداء) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Font Awesome CDN (أحدث إصدار للأداء) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-<!-- CSS الرئيسي لمشروعك -->
-<link rel="stylesheet" href="css/nbig.css" />
+    <!-- CSS الرئيسي لمشروعك -->
+    <link rel="stylesheet" href="css/nbig.css" />
     <style>
+      /* --- Form Specific Styles (Injected for preview/functionality) --- */
+      #contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        width: 100%;
+        margin: 30px auto 0; /* Centering the form */
+        padding: 20px;
+        /* Using variables from nbig.css */
+        background-color: #fff;
+        border-radius: var(--border-radius, 8px);
+        box-shadow: var(--box-shadow, 0 2px 8px rgba(0, 0, 0, 0.05));
+      }
+      #contact-form label {
+        font-weight: 600;
+        color: var(--third-color, #333);
+        margin-bottom: -5px;
+      }
+      #contact-form input[type="text"],
+      #contact-form input[type="email"],
+      #contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e7e7e7;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        margin-bottom: 0; /* Override the default margin-bottom in nbig.css */
+      }
+      #contact-form input:focus,
+      #contact-form textarea:focus {
+        border-color: var(--main-color, #00afef);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 175, 239, 0.1);
+      }
+      #contact-form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      #contact-form button[type="submit"] {
+        /* Adjusted styles from nbig.css to look nicer */
+        background: var(--main-color, #00afef);
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #contact-form button[type="submit"]:hover:not(:disabled) {
+        background: var(--second-color, #003399);
+        transform: translateY(-2px);
+      }
+      #contact-form button[type="submit"]:disabled {
+        background-color: #ccc;
+        cursor: wait;
+        opacity: 0.8;
+      }
+      /* Response Message Styling */
+      #success-msg {
+        /* Styles to make the success/error box clear */
+        margin-top: 20px;
+        font-size: 1rem;
+        text-align: center;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: none; /* Controlled by JS */
+      }
+
+      /* General Styles (as provided by user) */
       .language-switcher {
         display: flex;
         align-items: center;
@@ -175,6 +264,26 @@
       @media (min-width: 769px) {
         .mobile-social-bar {
           display: none;
+        }
+      }
+      /* Spinner Animation (for button) */
+      .loader-btn {
+        border: 2px solid #f3f3f3; /* Light grey */
+        border-top: 2px solid #fff; /* White spinner border */
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        animation: spin 1s linear infinite;
+        margin-right: 8px;
+        margin-left: 8px; /* For RTL support */
+        display: inline-block;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
         }
       }
     </style>
@@ -689,31 +798,155 @@
             ></a>
           </div>
 
-          <form id="contact-form">
-            <label for="name" data-translate="formName">Your Name</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email" data-translate="formEmail">Your Email</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="number" data-translate="formNumber">Your Number</label>
-            <input type="text" id="number" name="number" required />
-
-            <label for="message" data-translate="formMessage"
-              >Your Message</label
-            >
-            <textarea id="message" name="message"></textarea>
-
-            <button type="submit" data-translate="formSend">Send</button>
-          </form>
-
-          <p
-            id="success-msg"
-            style="display: none; color: green"
-            data-translate="successMsg"
+          <!-- THE AJAX FORM -->
+          <form
+            id="contactForm"
+            method="POST"
+            action="send_email.php"
+            style="
+              max-width: 480px;
+              margin: 40px auto 0 auto;
+              background: #fff;
+              padding: 32px 28px 24px 28px;
+              border-radius: 16px;
+              box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+            "
           >
-            ✅ Message sent successfully!
-          </p>
+            <h2
+              style="
+                text-align: center;
+                color: #007bff;
+                font-weight: 700;
+                margin-bottom: 28px;
+              "
+            >
+              Contact New Build
+            </h2>
+            <div style="margin-bottom: 18px">
+              <label
+                style="font-weight: 600; display: block; margin-bottom: 6px"
+                >Your Name</label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px 14px;
+                  border-radius: 8px;
+                  border: 1px solid #e7e7e7;
+                  font-size: 1.08rem;
+                "
+              />
+            </div>
+            <div style="margin-bottom: 18px">
+              <label
+                style="font-weight: 600; display: block; margin-bottom: 6px"
+                >Your Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px 14px;
+                  border-radius: 8px;
+                  border: 1px solid #e7e7e7;
+                  font-size: 1.08rem;
+                "
+              />
+            </div>
+            <div style="margin-bottom: 18px">
+              <label
+                style="font-weight: 600; display: block; margin-bottom: 6px"
+                >Your Number</label
+              >
+              <input
+                type="text"
+                name="number"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px 14px;
+                  border-radius: 8px;
+                  border: 1px solid #e7e7e7;
+                  font-size: 1.08rem;
+                "
+              />
+            </div>
+            <div style="margin-bottom: 18px">
+              <label
+                style="font-weight: 600; display: block; margin-bottom: 6px"
+                >Your Message
+                <span style="color: #888; font-weight: 400; font-size: 0.95em"
+                  >(optional)</span
+                ></label
+              >
+              <textarea
+                name="message"
+                rows="4"
+                style="
+                  width: 100%;
+                  padding: 12px 14px;
+                  border-radius: 8px;
+                  border: 1px solid #e7e7e7;
+                  font-size: 1.08rem;
+                "
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              style="
+                background: #003399;
+                color: #fff;
+                padding: 14px 0;
+                width: 100%;
+                border: none;
+                border-radius: 8px;
+                font-size: 1.15rem;
+                font-weight: bold;
+                cursor: pointer;
+              "
+            >
+              Send Message
+            </button>
+            <div
+              id="formResult"
+              style="margin-top: 18px; text-align: center"
+            ></div>
+          </form>
+          <script>
+            document.getElementById("contactForm").onsubmit = async function (
+              e
+            ) {
+              e.preventDefault();
+              const form = e.target;
+              const formData = new FormData(form);
+              const resultDiv = document.getElementById("formResult");
+              resultDiv.textContent = "Sending...";
+              try {
+                const res = await fetch(form.action, {
+                  method: "POST",
+                  body: formData,
+                });
+                const data = await res.json();
+                if (data.success) {
+                  resultDiv.style.color = "green";
+                  resultDiv.textContent =
+                    "Your message has been sent successfully!";
+                  form.reset();
+                } else {
+                  resultDiv.style.color = "red";
+                  resultDiv.textContent = data.message || "An error occurred.";
+                }
+              } catch {
+                resultDiv.style.color = "red";
+                resultDiv.textContent = "Could not connect to server.";
+              }
+            };
+          </script>
         </div>
       </section>
     </main>
@@ -818,6 +1051,7 @@
           cmcTower: "CMC",
           cmc2: "CMC 2",
           cmc3: "CMC 3",
+          tibaMedCenter: "Tiba Med Center",
           aboutTitle: "About Us",
           aboutText1:
             "At NBIG Developments, we strive to create world-class real estate projects and deliver innovative solutions that enhance quality of life.",
@@ -900,6 +1134,7 @@
           cmcTower: "سي إم سي",
           cmc2: "سي إم سي 2",
           cmc3: "سي إم سي 3",
+          tibaMedCenter: "طيبه ميد سنتر",
           aboutTitle: "عن الشركة",
           aboutText1:
             "في نيو بيلد انترناشونال جروب NBIG للتطوير، نسعى جاهدين لإنشاء مشاريع عقارية عالمية المستوى وتقديم حلول مبتكرة تعزز جودة الحياة.",
@@ -958,8 +1193,7 @@
             translations.ar.ogTitle;
           document.querySelector('meta[property="og:description"]').content =
             translations.ar.ogDescription;
-          document.querySelector("#success-msg").textContent =
-            translations.ar.successMsg;
+          // Note: successMsg content will be updated dynamically by the form handler
         } else {
           document.querySelector('meta[name="description"]').content =
             translations.en.metaDescription;
@@ -969,8 +1203,7 @@
             translations.en.ogTitle;
           document.querySelector('meta[property="og:description"]').content =
             translations.en.ogDescription;
-          document.querySelector("#success-msg").textContent =
-            translations.en.successMsg;
+          // Note: successMsg content will be updated dynamically by the form handler
         }
       };
 
@@ -993,71 +1226,92 @@
           document.getElementById("lang-ar").classList.add("active");
           document.getElementById("lang-en").classList.remove("active");
         });
-      });
 
-      // Google Sheets Form Submission
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyy3eNRwIf3IktyXxNa4y6KlXN_0rxFKJhbf8pu4Qw6F647c0HKGXSZpcwUJARjiiHNDg/exec";
-      const form = document.forms["contact-form"];
-      const successMsg = document.getElementById("success-msg");
+        // --- Form Submission Logic (FIXED FOR JSON RESPONSE) ---
+        const form = document.getElementById("contact-form");
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const responseMsg = document.getElementById("success-msg");
 
-      if (form && successMsg) {
-        form.addEventListener("submit", (e) => {
+        // دالة لعرض رسالة الاستجابة
+        const showResponse = (message, isSuccess) => {
+          responseMsg.innerHTML = message;
+          // استخدام ترويسات ألوان واضحة للنجاح والفشل
+          responseMsg.style.color = isSuccess ? "#155724" : "#721c24"; // أخضر غامق / أحمر غامق
+          responseMsg.style.backgroundColor = isSuccess ? "#d4edda" : "#f8d7da"; // أخضر فاتح / أحمر فاتح
+          responseMsg.style.border = isSuccess
+            ? "1px solid #c3e6cb"
+            : "1px solid #f5c6cb";
+          responseMsg.style.display = "block";
+        };
+
+        // دالة لإدارة حالة التحميل
+        const toggleLoading = (isLoading) => {
+          const currentLang = document.documentElement.lang || "en";
+          submitBtn.disabled = isLoading;
+          if (isLoading) {
+            // إضافة سبينر مؤقت ونص أثناء الإرسال
+            submitBtn.innerHTML = `<span class="loader-btn"></span> ${
+              currentLang === "ar" ? "جاري الإرسال..." : "Sending..."
+            }`;
+          } else {
+            // استعادة النص الأصلي بعد الانتهاء
+            submitBtn.textContent = translations[currentLang].formSend;
+          }
+        };
+
+        form.addEventListener("submit", async function (e) {
           e.preventDefault();
-          fetch(scriptURL, { method: "POST", body: new FormData(form) })
-            .then((response) => {
-              successMsg.style.display = "inline";
-              form.reset();
-              setTimeout(() => {
-                successMsg.style.display = "none";
-              }, 5000);
-            })
-            .catch((error) => {
-              successMsg.style.display = "inline";
-              successMsg.style.color = "red";
-              successMsg.textContent =
-                "Sorry, there was an error. Please try again.";
-              setTimeout(() => {
-                successMsg.style.display = "none";
-                successMsg.style.color = "green";
-                successMsg.textContent = "Message sent successfully!";
-              }, 5000);
-            });
-        });
-      }
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+          responseMsg.style.display = "none"; // إخفاء الرسالة السابقة
 
-          var form = e.target;
-          var formData = new FormData(form);
+          if (!form.checkValidity()) {
+            // ترك المتصفح يعرض رسائل التحقق الافتراضية إذا فشل التحقق الأساسي
+            return;
+          }
 
-          fetch(
-            "https://script.google.com/macros/s/AKfycbyXMyFQ5rKOT0pcuMbqSaE4kxfKgcE-T3QefO_XarWl6EV8YE59uio8YgzZWdEiPQ-J/exec",
-            {
+          toggleLoading(true);
+
+          const formData = new FormData(form);
+
+          try {
+            const response = await fetch("send_email.php", {
               method: "POST",
               body: formData,
-            }
-          )
-            .then((res) => res.text())
-            .then((txt) => {
-              if (txt.includes("Success")) {
-                document.getElementById("success-msg").style.display = "block";
-                form.reset();
-                setTimeout(() => {
-                  document.getElementById("success-msg").style.display = "none";
-                }, 5000);
-              } else {
-                alert("⚠️ حصل خطأ غير متوقع: " + txt);
-              }
-            })
-            .catch((err) => {
-              alert("❌ حدث خطأ أثناء الإرسال");
-              console.error(err);
             });
+
+            // *** قراءة الاستجابة كـ JSON ***
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+              // نجاح الإرسال (حالة HTTP 200 و success: true)
+              showResponse("✅ " + result.message, true); // استخدام رسالة الخادم
+              form.reset();
+            } else {
+              // فشل الإرسال (حالة HTTP غير 200 أو success: false)
+              // استخدام رسالة الخادم إذا كانت موجودة، وإلا رسالة خطأ عامة
+              const errorMessage =
+                result.message || "حدث خطأ غير معروف أثناء معالجة الطلب.";
+              showResponse("❌ " + errorMessage, false);
+            }
+          } catch (error) {
+            // خطأ في الشبكة أو فشل في قراءة JSON
+            console.error("AJAX Error:", error);
+            showResponse(
+              "❌ تعذر الاتصال بالخادم. الرجاء التأكد من اتصالك بالإنترنت والمحاولة لاحقاً.",
+              false
+            );
+          } finally {
+            toggleLoading(false);
+
+            // إخفاء الرسالة بعد 7 ثوانٍ
+            setTimeout(() => {
+              responseMsg.style.display = "none";
+            }, 7000);
+          }
         });
+        // --- End of Form Submission Logic (FIXED) ---
+      });
     </script>
+
     <script src="js/animations.js" defer></script>
     <script src="js/main.js" defer></script>
   </body>
