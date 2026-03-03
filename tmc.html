@@ -1,779 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-translate="pageTitle">
-      Tiba Med Center - TMC | NBIG Developments
-    </title>
-    <link rel="icon" href="images/logo.png" />
-    <meta
-      name="description"
-      data-translate="metaDescription"
-      content="Tiba Med Center (TMC) by NBIG Developments – An integrated destination for specialized medical clinics and commercial spaces in 6th of October."
-    />
-    <meta
-      name="keywords"
-      data-translate="metaKeywords"
-      content="Tiba Med Center, TMC, Medical Clinics, NBIG Developments, 6th of October, Healthcare Real Estate, Medical Mall"
-    />
-    <meta name="author" content="NBIG Developments" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://nbig.com/tmc.html" />
 
-    <meta
-      property="og:title"
-      data-translate="ogTitle"
-      content="Tiba Med Center - TMC"
-    />
-    <meta
-      property="og:description"
-      data-translate="ogDescription"
-      content="An integrated medical mall combining clinics and commercial spaces in 6th of October by NBIG Developments."
-    />
-    <meta property="og:image" content="https://nbig.com/images/tmc.jpg" />
-    <meta property="og:url" content="https://nbig.com/tmc.html" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>TMC – Tiba Med Center | NBIG Developments</title>
+  <link rel="icon" href="images/logo.png" />
+  <meta name="description"
+    content="TMC Tiba Med Center by NBIG Developments – The first integrated medical mall combining specialty clinics and commercial spaces in 6th of October." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c96d;
+      --dark: #080810;
+      --dark2: #0f0f1e;
+      --dark3: #16162a;
+      --glass: rgba(255, 255, 255, 0.04);
+      --gb: rgba(201, 168, 76, 0.2);
+      --text: #f0ece0;
+      --muted: rgba(240, 236, 224, 0.6);
+    }
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "MedicalClinic",
-        "name": "Tiba Med Center",
-        "description": "A comprehensive medical and commercial hub in 6th of October City, Egypt.",
-        "developer": {
-          "@type": "Organization",
-          "name": "NBIG Developments"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "6th of October City",
-          "addressCountry": "EG"
-        },
-        "telephone": "+201112221121",
-        "url": "https://nbig.com/tmc.html"
-      }
-    </script>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <link rel="preload" href="css/nbig_optimized.css" as="style" />
-    <link rel="preload" href="css/projects.css" as="style" />
-    <link rel="preload" href="images/tmc.jpg" as="image" />
-    <link rel="preload" href="images/tmc 1.jpg" as="image" />
-    <link rel="preload" href="images/tmc 1 1.jpg" as="image" />
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/nbig.css" />
-    <link rel="stylesheet" href="css/projects.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
 
-    <style>
-      .language-switcher {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-left: 20px;
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity .6s;
+    }
+
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ll {
+      width: 80px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .lr {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(201, 168, 76, .2);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
       }
-      .language-switcher button {
-        background: none;
-        border: 2px solid #0056b3;
-        color: #0056b3;
-        padding: 5px 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-        font-weight: bold;
-      }
-      .language-switcher button:hover {
-        background-color: #0056b3;
-        color: white;
-      }
-      .language-switcher button.active {
-        background-color: #0056b3;
-        color: white;
-      }
-      [dir="rtl"] .language-switcher {
-        margin-left: 0;
-        margin-right: 20px;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
       }
 
-      .social-bar-simple {
-        position: fixed;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 5px;
-        background-color: white;
-        border-radius: 0 10px 10px 0;
-        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
+      50% {
+        transform: scale(1.08);
       }
-      .social-bar-simple a {
-        color: #1a1a1a;
-        font-size: 20px;
-        text-align: center;
-        line-height: 1;
-        transition: color 0.3s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
-      .social-bar-simple a:hover {
-        color: #d4af37;
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .mobile-social-bar {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        max-width: 450px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .4s;
+    }
+
+    header.scrolled {
+      background: rgba(8, 8, 16, .92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gb);
+    }
+
+    .logo img {
+      height: 50px;
+      filter: brightness(0) invert(1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .05em;
+      transition: color .3s;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .lb {
+      background: none;
+      border: 1px solid var(--gb);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: .8rem;
+      font-weight: 600;
+      transition: all .3s;
+    }
+
+    .lb.active,
+    .lb:hover {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+
+    .ls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mt {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mt span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--text);
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hs div {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s;
+    }
+
+    .hs div.active {
+      opacity: 1;
+    }
+
+    .hs div::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(8, 8, 16, .85) 0%, rgba(8, 8, 16, .5) 60%, transparent 100%);
+    }
+
+    .hc {
+      position: relative;
+      z-index: 2;
+      padding: 0 80px;
+      max-width: 750px;
+    }
+
+    .htag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 168, 76, .12);
+      border: 1px solid var(--gb);
+      border-radius: 40px;
+      padding: 6px 20px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      animation: fadeUp .8s .15s ease both;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hsub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 44px;
+      animation: fadeUp .8s .3s ease both;
+    }
+
+    .hbtns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeUp .8s .45s ease both;
+    }
+
+    .bg {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--dark);
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .bg:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 35px rgba(201, 168, 76, .35);
+    }
+
+    .bo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      border: 1px solid var(--gb);
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: all .25s;
+    }
+
+    .bo:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hdots {
+      position: absolute;
+      bottom: 40px;
+      left: 80px;
+      display: flex;
+      gap: 10px;
+      z-index: 2;
+    }
+
+    .dot {
+      width: 28px;
+      height: 3px;
+      background: rgba(255, 255, 255, .25);
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all .3s;
+    }
+
+    .dot.active {
+      background: var(--gold);
+      width: 48px;
+    }
+
+    .sbar {
+      background: linear-gradient(135deg, var(--dark2), var(--dark3));
+      border-top: 1px solid var(--gb);
+      border-bottom: 1px solid var(--gb);
+      padding: 40px 80px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .sn {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .sl {
+      font-size: .8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    section {
+      padding: 100px 80px;
+    }
+
+    .stag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .stitle {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .ssep {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 32px;
+    }
+
+    .ov2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .ovt p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 28px;
+    }
+
+    .cl {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cl li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.6;
+    }
+
+    .cl li::before {
+      content: '\f00c';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--gold);
+      font-size: .8rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .ovi img {
+      width: 100%;
+      border-radius: 12px;
+      display: block;
+      object-fit: cover;
+      height: 480px;
+    }
+
+    .fsec {
+      background: var(--dark2);
+    }
+
+    .fg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .fc {
+      background: var(--glass);
+      border: 1px solid var(--gb);
+      border-radius: 12px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      backdrop-filter: blur(12px);
+    }
+
+    .fc:hover {
+      transform: translateY(-6px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 50px rgba(201, 168, 76, .12);
+    }
+
+    .fi {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(201, 168, 76, .15), rgba(201, 168, 76, .05));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+
+    .fc h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .fc p {
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.7;
+    }
+
+    .gg {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 260px 260px;
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .gi {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .gi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .gi:hover img {
+      transform: scale(1.06);
+    }
+
+    .gi:first-child {
+      grid-row: 1/3;
+    }
+
+    .loc2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .limg img {
+      width: 100%;
+      border-radius: 12px;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .ltags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .ltag {
+      background: var(--glass);
+      border: 1px solid var(--gb);
+      border-radius: 40px;
+      padding: 8px 20px;
+      font-size: .82rem;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ug {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .uc {
+      background: var(--glass);
+      border: 1px solid var(--gb);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .uc::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+
+    .uc h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .uc p {
+      color: var(--muted);
+      font-size: .83rem;
+      line-height: 1.6;
+    }
+
+    .pw {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pt {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gb);
+      margin-top: 40px;
+    }
+
+    .pt img {
+      width: 100%;
+      display: block;
+    }
+
+    .ctas {
+      background: linear-gradient(135deg, rgba(201, 168, 76, .08), rgba(201, 168, 76, .02));
+      border-top: 1px solid var(--gb);
+      text-align: center;
+      padding: 120px 80px;
+    }
+
+    .ctas h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .ctas p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.8;
+    }
+
+    .cbs {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .ss {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      z-index: 900;
+      border-radius: 0 10px 10px 0;
+      overflow: hidden;
+    }
+
+    .ss a {
+      background: rgba(8, 8, 16, .9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--gb);
+      color: var(--muted);
+      padding: 15px 14px;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s;
+    }
+
+    .ss a:last-child {
+      border-bottom: none;
+    }
+
+    .ss a:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    footer {
+      background: var(--dark2);
+      border-top: 1px solid var(--gb);
+      padding: 30px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s, transform .7s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media(max-width:900px) {
+      header {
+        padding: 16px 24px;
+      }
+
+      nav ul {
         display: none;
-        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(8, 8, 16, .98);
+        flex-direction: column;
         align-items: center;
-        padding: 15px 10px;
-        background-color: #ffffff;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-      }
-      .mobile-social-bar .social-icon {
-        color: #003399;
-        font-size: 24px;
-        transition: color 0.3s ease;
-      }
-      .mobile-social-bar .social-icon:hover {
-        color: #d4af37;
-      }
-      .mobile-social-bar .bulb-icon {
-        position: absolute;
-        top: -20px;
-        color: #d4af37;
-        font-size: 30px;
+        justify-content: center;
+        gap: 36px;
       }
 
-      @media (max-width: 768px) {
-        .social-bar-simple {
-          display: none;
-        }
-        .mobile-social-bar {
-          display: flex;
-        }
+      nav ul.open {
+        display: flex;
       }
-      @media (min-width: 769px) {
-        .mobile-social-bar {
-          display: none;
-        }
+
+      .mt {
+        display: flex;
       }
-    </style>
-  </head>
-  <body>
-    <div id="loader-overlay">
-      <div class="loader-logo">
-        <img
-          src="images/logo.png"
-          alt="NBIG Logo"
-          width="80"
-          height="80"
-          loading="lazy"
-        />
-        <span class="loader-spinner"></span>
+
+      section {
+        padding: 70px 28px;
+      }
+
+      .sbar {
+        padding: 36px 28px;
+      }
+
+      .ov2col,
+      .loc2 {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .fg {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gg {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+
+      .gi:first-child {
+        grid-row: auto;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 24px;
+      }
+
+      .ss {
+        display: none;
+      }
+    }
+
+    @media(max-width:580px) {
+      .fg {
+        grid-template-columns: 1fr;
+      }
+
+      .hbtns {
+        flex-direction: column;
+      }
+
+      .gg {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="li"><img class="ll" src="images/logo.png" alt="NBIG" />
+      <div class="lr"></div>
+    </div>
+  </div>
+  <div class="ss">
+    <a href="https://www.facebook.com/nbigdevelopments" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/nbigdevelopments/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://wa.me/201112221121" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:19938"><i class="fas fa-phone"></i></a>
+  </div>
+  <header id="header">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt="NBIG" /></a></div>
+    <nav><button class="mt" id="mt"><span></span><span></span><span></span></button>
+      <ul id="nm">
+        <li><a href="index.html#services" data-t="ns">Services</a></li>
+        <li><a href="index.html#portfolio" data-t="np">Projects</a></li>
+        <li><a href="index.html#about" data-t="na">About</a></li>
+        <li><a href="index.html#contact" data-t="nc">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="ls"><button class="lb active" id="ben">EN</button><button class="lb" id="bar">AR</button></div>
+  </header>
+  <section class="hero">
+    <div class="hs" id="hs">
+      <div class="active" style="background-image:url('images/tmc.jpg')"></div>
+      <div style="background-image:url('images/tmc 1.jpg')"></div>
+      <div style="background-image:url('images/tmc 1 1.jpg')"></div>
+      <div style="background-image:url('images/ZX 01.jpg')"></div>
+    </div>
+    <div class="hc">
+      <div class="htag"><i class="fas fa-star"></i> <span data-t="ht">NBIG Developments</span></div>
+      <h1 data-t="h1">TMC<br /><span>Tiba Med Center</span></h1>
+      <p class="hsub" data-t="hs2">The first integrated medical mall — specialized clinics and commercial spaces
+        combined in 6th of October City.</p>
+      <div class="hbtns">
+        <a href="tel:19938" class="bg"><i class="fas fa-phone"></i> <span data-t="cn">Call Now</span></a>
+        <a href="https://wa.me/201112221121" target="_blank" class="bo"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
     </div>
-
-    <header class="header">
-      <div class="container">
-        <a href="index.html">
-          <img
-            class="logo"
-            src="images/logo.png"
-            alt="NBIG Developments Logo"
-            width="130"
-            loading="lazy"
-          />
-        </a>
-        <nav class="links" aria-label="Main navigation">
-          <button
-            class="menu-toggle"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-          >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-          <ul class="nav-menu">
-            <li>
-              <a href="index.html#services" data-translate="navServices"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a href="index.html#portfolio" data-translate="navProjects"
-                >Projects</a
-              >
-            </li>
-            <li>
-              <a href="index.html#about" data-translate="navAbout">About Us</a>
-            </li>
-            <li>
-              <a href="index.html#contact" data-translate="navContact"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </nav>
-        <div class="language-switcher">
-          <button id="lang-en" class="active">EN</button>
-          <button id="lang-ar">AR</button>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <section class="vision-hero">
-        <div class="vision-hero-container">
-          <div class="vision-hero-info">
-            <h1 class="project-title" data-translate="heroTitle">
-              TMC - Tiba Med Center
-            </h1>
-            <p class="project-subtitle" data-translate="heroSubtitle">
-              The first integrated medical mall combining specialized clinics
-              and commercial spaces
-            </p>
-            <div class="project-meta">
-              <span
-                ><i class="fas fa-map-marker-alt"></i>
-                <a
-                  href="https://maps.app.goo.gl/GdDqT9ijwYDHw3YT6"
-                  target="_blank"
-                  data-translate="location"
-                  >6th of October</a
-                ></span
-              >
-              <span
-                ><i class="fas fa-clinic-medical"></i>
-                <span data-translate="projectType"
-                  >Medical Clinics & Commercial Spaces</span
-                ></span
-              >
-              <span
-                ><i class="fas fa-star"></i>
-                <span data-translate="quality">Premium Quality</span></span
-              >
-            </div>
-            <div class="hero-cta">
-              <a
-                href="tel:19938"
-                class="cta-btn primary"
-                data-translate="callNowBtn"
-                ><i class="fas fa-phone"></i> Call Now</a
-              >
-              <a
-                href="https://wa.me/201112221121"
-                target="_blank"
-                class="cta-btn secondary"
-                data-translate="whatsappBtn"
-                ><i class="fab fa-whatsapp"></i> WhatsApp</a
-              >
-            </div>
-          </div>
-          <div class="vision-hero-img">
-            <img
-              src="images/ZX 01.jpg"
-              alt="Tiba Med Center Front"
-              loading="lazy"
-              width="500"
-              height="400"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="vision-section">
-        <div class="split-section">
-          <div class="vision-content">
-            <h2 data-translate="overviewTitle">Project Overview</h2>
-            <p data-translate="overviewText1">
-              Tiba Med Center (TMC) is the first integrated medical mall in the
-              area, combining specialized medical clinics and diverse commercial
-              spaces. Developed by NBIG Developments, with over 13 years of
-              experience in residential, commercial, and administrative projects
-              in Egypt and the UAE. The project aims to meet the needs of
-              doctors, investors, patients, and visitors.
-            </p>
-            <ul>
-              <li data-translate="overviewListItem1">
-                Strategic location and modern design.
-              </li>
-              <li data-translate="overviewListItem2">
-                Unique experience combining healthcare and shopping.
-              </li>
-              <li data-translate="overviewListItem3">
-                Includes 50 medical clinics, a pharmacy, and 2 labs.
-              </li>
-              <li data-translate="overviewListItem4">
-                Features a radiology center, mini market, and café.
-              </li>
-            </ul>
-          </div>
-          <div class="vision-img">
-            <img
-              src="images/ZX 02.jpg"
-              alt="Tiba Med Center Building"
-              loading="lazy"
-              width="450"
-              height="350"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="vision-section section-bg">
-        <div class="container">
-          <div
-            class="vision-content"
-            style="text-align: center; margin-bottom: 50px"
-          >
-            <h2 data-translate="featuresTitle">Features & Facilities</h2>
-            <p data-translate="featuresDesc">
-              The project offers services and facilities designed for the
-              comfort of doctors, patients, and visitors.
-            </p>
-          </div>
-          <div class="features-grid">
-            <div class="feature-card">
-              <i class="fas fa-mobile-alt"></i>
-              <h3 data-translate="feature1Title">Integrated Mobile App</h3>
-              <p data-translate="feature1Desc">
-                For easy appointment booking, remote consultations, and medical
-                records tracking.
-              </p>
-            </div>
-            <div class="feature-card">
-              <i class="fas fa-clinic-medical"></i>
-              <h3 data-translate="feature2Title">Equipped Clinics</h3>
-              <p data-translate="feature2Desc">
-                Fully finished and air-conditioned clinics for all medical
-                specialties.
-              </p>
-            </div>
-            <div class="feature-card">
-              <i class="fas fa-concierge-bell"></i>
-              <h3 data-translate="feature3Title">Central Reception</h3>
-              <p data-translate="feature3Desc">
-                Central reception on each floor for easy access for patients and
-                visitors.
-              </p>
-            </div>
-            <div class="feature-card">
-              <i class="fas fa-car"></i>
-              <h3 data-translate="feature4Title">Parking Spaces</h3>
-              <p data-translate="feature4Desc">
-                Parking and waiting areas for easy access.
-              </p>
-            </div>
-            <div class="feature-card">
-              <i class="fas fa-wifi"></i>
-              <h3 data-translate="feature5Title">Central Wi-Fi</h3>
-              <p data-translate="feature5Desc">
-                High-speed internet network covering the entire mall.
-              </p>
-            </div>
-            <div class="feature-card">
-              <i class="fas fa-shield-alt"></i>
-              <h3 data-translate="feature6Title">Sound & Dust Insulation</h3>
-              <p data-translate="feature6Desc">
-                Fully insulated facades for a quiet and clean environment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="vision-section">
-        <div class="split-section reverse-row">
-          <div class="vision-content">
-            <h2 data-translate="locationTitle">Strategic Location</h2>
-            <h3 data-translate="locationSubtitle">6th of October City</h3>
-            <p data-translate="locationDesc">
-              Tiba Med Center is located in 6th of October City, behind Mall of
-              Arabia and Gamal Abdel Nasser Axis. The project is in the clubs
-              and palaces area, steps away from the tourist walkway and Gamal
-              Abdel Nasser Axis. It is next to the largest residential complexes
-              and surrounded by more than 35 compounds.
-            </p>
-            <ul>
-              <li data-translate="locationListItem1">
-                Near Mall of Arabia, 6th of October Club, and Shooting Club.
-              </li>
-              <li data-translate="locationListItem2">
-                Close to Boulevard Axis and July 26 Axis.
-              </li>
-              <li data-translate="locationListItem3">
-                Near universities and schools like MUST.
-              </li>
-              <li data-translate="locationListItem4">
-                Location ensures easy access and high demand for services.
-              </li>
-            </ul>
-          </div>
-          <div class="vision-img">
-            <img
-              src="images/ZX 03.jpg"
-              alt="Tiba Med Center Location Map"
-              loading="lazy"
-              width="450"
-              height="350"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="vision-section section-bg">
-        <div class="split-section">
-          <div class="vision-content">
-            <h2 data-translate="unitsAndServicesTitle">
-              Units & Medical Services
-            </h2>
-            <p data-translate="unitsAndServicesDesc">
-              The project features a variety of units and facilities to meet all
-              medical and commercial needs.
-            </p>
-            <ul>
-              <li data-translate="unitsAndServicesItem1">
-                Number of medical clinics: 50 clinics.
-              </li>
-              <li data-translate="unitsAndServicesItem2">
-                Integrated pharmacy.
-              </li>
-              <li data-translate="unitsAndServicesItem3">
-                Radiology center and two labs.
-              </li>
-              <li data-translate="unitsAndServicesItem4">
-                Commercial units with different spaces.
-              </li>
-              <li data-translate="unitsAndServicesItem5">
-                Fitness and wellness center.
-              </li>
-            </ul>
-          </div>
-          <div class="vision-img">
-            <img
-              src="images/ZX 04.jpg"
-              alt="Tiba Med Center Front"
-              loading="lazy"
-              width="450"
-              height="350"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section class="pdf-section">
-        <div class="map-container">
-          <div class="map-header">
-            <h2 data-translate="brochureTitle">Project Brochure</h2>
-            <p data-translate="brochureDesc">
-              Download the full Tiba Med Center brochure in PDF format
-            </p>
-          </div>
-          <div class="map-wrapper">
-            <a
-              href="pdf/TMC - PROFILE.pdf"
-              target="_blank"
-              style="display: block; text-decoration: none"
-            >
-              <img
-                src="images/cmc-pdf-thumbnail.jpg"
-                alt="TMC Brochure Thumbnail"
-                style="width: 100%; height: auto; display: block"
-                loading="lazy"
-              />
-            </a>
-          </div>
-          <div class="map-actions">
-            <a
-              href="pdf/TMC - PROFILE.pdf"
-              target="_blank"
-              class="btn btn-primary"
-              data-translate="viewPdfBtn"
-            >
-              <i class="fas fa-file-pdf"></i> View PDF
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section">
-        <div class="cta-content">
-          <h2 data-translate="ctaTitle">Ready to launch your clinic?</h2>
-          <p data-translate="ctaDesc">
-            Contact us today to learn more about Tiba Med Center and secure your
-            space. Invest in a property that combines healthcare and shopping in
-            a modern tech environment.
-          </p>
-          <div class="cta-buttons">
-            <a href="tel:19938" class="cta-btn" data-translate="ctaCallBtn"
-              ><i class="fas fa-phone"></i> Call Now</a
-            >
-            <a
-              href="https://wa.me/201112221121"
-              target="_blank"
-              class="cta-btn"
-              data-translate="ctaWhatsAppBtn"
-              ><i class="fab fa-whatsapp"></i> WhatsApp</a
-            >
-            <a
-              href="index.html#contact"
-              class="cta-btn"
-              data-translate="ctaContactBtn"
-              ><i class="fas fa-envelope"></i> Contact Us</a
-            >
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="social-bar-simple">
-      <a href="https://www.facebook.com/nbigdevelopments" target="_blank"
-        ><i class="fab fa-facebook"></i
-      ></a>
-      <a href="https://www.instagram.com/nbigdevelopments/" target="_blank"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a href="https://www.youtube.com/@nbigdevelopments6485" target="_blank"
-        ><i class="fab fa-youtube"></i
-      ></a>
-      <a href="https://wa.me/201112221121" target="_blank"
-        ><i class="fab fa-whatsapp"></i
-      ></a>
-      <a href="tel:19938"><i class="fas fa-phone"></i></a>
+    <div class="hdots" id="hd"></div>
+  </section>
+  <div class="sbar">
+    <div class="stat">
+      <div class="sn">50</div>
+      <div class="sl" data-t="s1">Medical Clinics</div>
     </div>
-
-    <footer class="footer">
-      <div class="container">
-        <p data-translate="copyright">
-          © 2025 NBIG Developments. All rights reserved. |
-          <a href="index.html">Back to Home</a>
-        </p>
+    <div class="stat">
+      <div class="sn">35+</div>
+      <div class="sl" data-t="s2">Nearby Compounds</div>
+    </div>
+    <div class="stat">
+      <div class="sn">13+</div>
+      <div class="sl" data-t="s3">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="sn">1st</div>
+      <div class="sl" data-t="s4">Integrated Medical Mall</div>
+    </div>
+  </div>
+  <section>
+    <div class="ov2col reveal">
+      <div class="ovt">
+        <span class="stag" data-t="ot">The Project</span>
+        <h2 class="stitle" data-t="oti">Project Overview</h2>
+        <div class="ssep"></div>
+        <p data-t="ox">TMC (Tiba Med Center) is the first integrated medical mall in the area — combining specialized
+          medical clinics with diverse commercial spaces. Developed by NBIG Developments with 13+ years of experience
+          across Egypt, UAE, and Saudi Arabia.</p>
+        <ul class="cl">
+          <li data-t="o1">Strategic location behind Mall of Arabia, 6th of October</li>
+          <li data-t="o2">50 specialized medical clinics — all fully finished</li>
+          <li data-t="o3">Pharmacy, radiology center, and 2 medical analysis labs</li>
+          <li data-t="o4">Commercial spaces, mini market, and café</li>
+        </ul>
       </div>
-    </footer>
+      <div class="ovi"><img src="images/tmc 1.jpg" alt="TMC Interior" /></div>
+    </div>
+  </section>
+  <section class="fsec">
+    <div style="text-align:center;">
+      <span class="stag" data-t="ft">Why TMC</span>
+      <h2 class="stitle" data-t="fti">Features & Facilities</h2>
+      <div class="ssep" style="margin:0 auto;"></div>
+    </div>
+    <div class="fg reveal">
+      <div class="fc">
+        <div class="fi"><i class="fas fa-mobile-alt"></i></div>
+        <h3 data-t="f1">Integrated Mobile App</h3>
+        <p data-t="f1d">Easy appointment booking, remote consultations, and medical record tracking.</p>
+      </div>
+      <div class="fc">
+        <div class="fi"><i class="fas fa-clinic-medical"></i></div>
+        <h3 data-t="f2">Equipped Clinics</h3>
+        <p data-t="f2d">Fully finished and air-conditioned clinics for all medical specialties.</p>
+      </div>
+      <div class="fc">
+        <div class="fi"><i class="fas fa-concierge-bell"></i></div>
+        <h3 data-t="f3">Central Reception</h3>
+        <p data-t="f3d">Dedicated reception on each floor for easy access for patients and visitors.</p>
+      </div>
+      <div class="fc">
+        <div class="fi"><i class="fas fa-car"></i></div>
+        <h3 data-t="f4">Parking Spaces</h3>
+        <p data-t="f4d">Ample parking and waiting areas for easy access to all services.</p>
+      </div>
+      <div class="fc">
+        <div class="fi"><i class="fas fa-wifi"></i></div>
+        <h3 data-t="f5">Central Wi-Fi</h3>
+        <p data-t="f5d">High-speed internet network covering the entire mall.</p>
+      </div>
+      <div class="fc">
+        <div class="fi"><i class="fas fa-shield-alt"></i></div>
+        <h3 data-t="f6">Sound & Dust Insulation</h3>
+        <p data-t="f6d">Fully insulated facades for a quiet and clean environment.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <span class="stag" data-t="gt">Gallery</span>
+    <h2 class="stitle" data-t="gti">Project Visuals</h2>
+    <div class="ssep"></div>
+    <div class="gg reveal">
+      <div class="gi"><img src="images/tmc.jpg" alt="TMC 1" /></div>
+      <div class="gi"><img src="images/ZX 01.jpg" alt="TMC 2" /></div>
+      <div class="gi"><img src="images/ZX 02.jpg" alt="TMC 3" /></div>
+      <div class="gi"><img src="images/ZX 03.jpg" alt="TMC 4" /></div>
+      <div class="gi"><img src="images/ZX 04.jpg" alt="TMC 5" /></div>
+    </div>
+  </section>
+  <section class="fsec">
+    <div style="text-align:center;">
+      <span class="stag" data-t="ut">Units</span>
+      <h2 class="stitle" data-t="uti">Medical Services & Units</h2>
+      <div class="ssep" style="margin:0 auto;"></div>
+    </div>
+    <div class="ug reveal">
+      <div class="uc">
+        <h3 data-t="u1">50 Medical Clinics</h3>
+        <p data-t="u1d">All specialties — fully finished and air-conditioned.</p>
+      </div>
+      <div class="uc">
+        <h3 data-t="u2">Pharmacy</h3>
+        <p data-t="u2d">Integrated on-site pharmacy for patient convenience.</p>
+      </div>
+      <div class="uc">
+        <h3 data-t="u3">Radiology Center</h3>
+        <p data-t="u3d">Advanced imaging and radiology services.</p>
+      </div>
+      <div class="uc">
+        <h3 data-t="u4">2 Medical Labs</h3>
+        <p data-t="u4d">Full-service analysis laboratories on-site.</p>
+      </div>
+      <div class="uc">
+        <h3 data-t="u5">Commercial Units</h3>
+        <p data-t="u5d">Retail spaces, mini market, and café.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="loc2 reveal">
+      <div class="limg"><img src="images/ZX 03.jpg" alt="TMC Location" /></div>
+      <div>
+        <span class="stag" data-t="lt">Where to Find Us</span>
+        <h2 class="stitle" data-t="lti">6th of October City</h2>
+        <div class="ssep"></div>
+        <p style="color:var(--muted);line-height:1.9;margin-bottom:28px;" data-t="ld">TMC is behind Mall of Arabia on
+          Gamal Abdel Nasser Axis in 6th of October City — in the clubs and palaces zone, steps from the tourist
+          walkway, surrounded by more than 35 residential compounds.</p>
+        <div class="ltags">
+          <div class="ltag"><i class="fas fa-location-dot"></i>Mall of Arabia</div>
+          <div class="ltag"><i class="fas fa-location-dot"></i>6th October Club</div>
+          <div class="ltag"><i class="fas fa-location-dot"></i>Shooting Club</div>
+          <div class="ltag"><i class="fas fa-location-dot"></i>MUST University</div>
+          <div class="ltag"><i class="fas fa-location-dot"></i>July 26 Axis</div>
+          <div class="ltag"><i class="fas fa-location-dot"></i>Boulevard Axis</div>
+        </div>
+        <br />
+        <a href="https://maps.app.goo.gl/GdDqT9ijwYDHw3YT6" target="_blank" class="bo"
+          style="display:inline-flex;margin-top:8px"><i class="fas fa-map-marker-alt"></i> <span data-t="mb">View on
+            Map</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="fsec">
+    <div class="pw reveal">
+      <span class="stag" data-t="pdft">Documentation</span>
+      <h2 class="stitle" data-t="pdfti">Project Brochure</h2>
+      <div class="ssep" style="margin:0 auto;"></div>
+      <p style="color:var(--muted);" data-t="pdfd">Download the full TMC project brochure in PDF format.</p>
+      <a href="pdf/TMC - PROFILE.pdf" target="_blank">
+        <div class="pt"><img src="images/cmc-pdf-thumbnail.jpg" alt="TMC Brochure" /></div>
+      </a>
+      <div style="margin-top:24px;"><a href="pdf/TMC - PROFILE.pdf" target="_blank" class="bg"><i
+            class="fas fa-file-pdf"></i> <span data-t="pdfv">View PDF</span></a></div>
+    </div>
+  </section>
+  <section class="ctas reveal">
+    <h2 data-t="ct">Ready to Launch Your Clinic?</h2>
+    <p data-t="cd">Contact us today to learn more about TMC and secure your space. Invest in a property that combines
+      healthcare and shopping in a smart environment.</p>
+    <div class="cbs">
+      <a href="tel:19938" class="bg"><i class="fas fa-phone"></i> <span data-t="cb1">Call Now</span></a>
+      <a href="https://wa.me/201112221121" target="_blank" class="bo"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="index.html#contact" class="bo"><i class="fas fa-envelope"></i> <span data-t="cb3">Contact Us</span></a>
+    </div>
+  </section>
+  <footer>
+    <div>© 2025 NBIG Developments. <span data-t="rg">All rights reserved.</span></div><a href="index.html" data-t="bh">←
+      Back to Home</a>
+  </footer>
+  <script>
+    window.addEventListener('load', () => { setTimeout(() => document.getElementById('loader').classList.add('hidden'), 500); });
+    window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', scrollY > 60); });
+    document.getElementById('mt').onclick = () => document.getElementById('nm').classList.toggle('open');
+    document.querySelectorAll('#nm a').forEach(a => a.addEventListener('click', () => document.getElementById('nm').classList.remove('open')));
+    const sl = document.querySelectorAll('.hs div'), dw = document.getElementById('hd'); let cur = 0;
+    sl.forEach((_, i) => { const d = document.createElement('div'); d.className = 'dot' + (i === 0 ? ' active' : ''); d.onclick = () => gt(i); dw.appendChild(d); });
+    function gt(n) { sl[cur].classList.remove('active'); dw.children[cur].classList.remove('active'); cur = n; sl[cur].classList.add('active'); dw.children[cur].classList.add('active'); }
+    setInterval(() => gt((cur + 1) % sl.length), 5000);
+    document.querySelectorAll('.reveal').forEach(el => new IntersectionObserver((e) => { if (e[0].isIntersecting) e[0].target.classList.add('visible'); }, { threshold: 0.12 }).observe(el));
+    const T = { en: { ns: 'Services', np: 'Projects', na: 'About', nc: 'Contact', ht: 'NBIG Developments', h1: 'TMC<br/><span>Tiba Med Center</span>', hs2: "The first integrated medical mall — specialized clinics and commercial spaces in 6th of October City.", cn: 'Call Now', s1: 'Medical Clinics', s2: 'Nearby Compounds', s3: 'Years Experience', s4: 'Integrated Medical Mall', ot: 'The Project', oti: 'Project Overview', ox: "TMC is the first integrated medical mall — combining specialized clinics with commercial spaces. Developed by NBIG Developments with 13+ years of experience across Egypt, UAE, and Saudi Arabia.", o1: 'Strategic location behind Mall of Arabia, 6th of October', o2: '50 specialized medical clinics — fully finished', o3: 'Pharmacy, radiology center, and 2 medical labs', o4: 'Commercial spaces, mini market, and café', ft: 'Why TMC', fti: 'Features & Facilities', f1: 'Integrated Mobile App', f1d: 'Easy appointment booking and remote consultations.', f2: 'Equipped Clinics', f2d: 'Fully finished and air-conditioned clinics for all specialties.', f3: 'Central Reception', f3d: 'Dedicated reception on each floor.', f4: 'Parking Spaces', f4d: 'Ample parking and waiting areas.', f5: 'Central Wi-Fi', f5d: 'High-speed internet covering the entire mall.', f6: 'Sound & Dust Insulation', f6d: 'Fully insulated facades for a quiet environment.', gt: 'Gallery', gti: 'Project Visuals', ut: 'Units', uti: 'Medical Services & Units', u1: '50 Medical Clinics', u1d: 'All specialties — fully finished and air-conditioned.', u2: 'Pharmacy', u2d: 'Integrated on-site pharmacy.', u3: 'Radiology Center', u3d: 'Advanced imaging and radiology services.', u4: '2 Medical Labs', u4d: 'Full-service analysis laboratories.', u5: 'Commercial Units', u5d: 'Retail spaces, mini market, and café.', lt: 'Where to Find Us', lti: '6th of October City', ld: "TMC is behind Mall of Arabia on Gamal Abdel Nasser Axis — surrounded by more than 35 residential compounds.", mb: 'View on Map', pdft: 'Documentation', pdfti: 'Project Brochure', pdfd: 'Download the full TMC project brochure.', pdfv: 'View PDF', ct: 'Ready to Launch Your Clinic?', cd: 'Contact us today to secure your space at TMC. Invest in healthcare and shopping combined.', cb1: 'Call Now', cb3: 'Contact Us', rg: 'All rights reserved.', bh: '← Back to Home' }, ar: { ns: 'الخدمات', np: 'المشاريع', na: 'عن الشركة', nc: 'اتصل بنا', ht: 'ان بي اي جي للتطوير', h1: 'TMC<br/><span>مركز طيبة الطبي</span>', hs2: 'أول مول طبي تجاري متكامل يجمع العيادات المتخصصة والمساحات التجارية في مدينة 6 أكتوبر.', cn: 'اتصل الآن', s1: 'عيادة طبية', s2: 'كمبوند مجاور', s3: 'سنة خبرة', s4: 'أول مول طبي متكامل', ot: 'المشروع', oti: 'نظرة عامة', ox: 'مركز طيبة الطبي هو أول مول طبي تجاري متكامل في المنطقة يجمع العيادات الطبية المتخصصة مع المساحات التجارية. من تطوير NBIG Developments بخبرة 13+ عاماً.', o1: 'موقع استراتيجي خلف مول العرب، 6 أكتوبر', o2: '50 عيادة طبية متخصصة كاملة التشطيب', o3: 'صيدلية ومركز أشعة ومعملان للتحاليل', o4: 'وحدات تجارية وميني ماركت وكافيه', ft: 'لماذا TMC', fti: 'الميزات والمرافق', f1: 'تطبيق جوال متكامل', f1d: 'حجز مواعيد واستشارات عن بعد ومتابعة السجلات.', f2: 'عيادات مجهزة', f2d: 'كاملة التشطيب ومكيفة لجميع التخصصات.', f3: 'استقبال مركزي', f3d: 'استقبال مخصص في كل طابق.', f4: 'مواقف سيارات', f4d: 'مواقف واسعة لجميع الزوار.', f5: 'واي فاي مركزي', f5d: 'إنترنت عالي السرعة يغطي المول كاملاً.', f6: 'عزل صوت وغبار', f6d: 'واجهات معزولة لبيئة هادئة ونظيفة.', gt: 'معرض الصور', gti: 'صور المشروع', ut: 'الوحدات', uti: 'الخدمات والوحدات الطبية', u1: '50 عيادة طبية', u1d: 'جميع التخصصات — كاملة التشطيب ومكيفة.', u2: 'صيدلية', u2d: 'صيدلية متكاملة في الموقع.', u3: 'مركز أشعة', u3d: 'خدمات الأشعة والتصوير المتقدمة.', u4: '2 معمل تحاليل', u4d: 'معامل تحاليل متكاملة في الموقع.', u5: 'وحدات تجارية', u5d: 'محال تجارية وميني ماركت وكافيه.', lt: 'أين نحن', lti: 'مدينة 6 أكتوبر', ld: 'يقع TMC خلف مول العرب على محور جمال عبد الناصر، محاطاً بأكثر من 35 كمبوند سكني.', mb: 'عرض على الخريطة', pdft: 'التوثيق', pdfti: 'كتيب المشروع', pdfd: 'تحميل الملف التعريفي لمركز طيبة الطبي.', pdfv: 'عرض PDF', ct: 'جاهز لإطلاق عيادتك؟', cd: 'تواصل معنا اليوم واحجز مساحتك في TMC. استثمر في مشروع يجمع الرعاية الصحية والتجارة.', cb1: 'اتصل الآن', cb3: 'اتصل بنا', rg: 'جميع الحقوق محفوظة.', bh: '→ العودة للرئيسية' } };
+    function setLang(l) { document.documentElement.lang = l; document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr'; document.getElementById('ben').classList.toggle('active', l === 'en'); document.getElementById('bar').classList.toggle('active', l === 'ar'); document.querySelectorAll('[data-t]').forEach(el => { const k = el.getAttribute('data-t'); if (T[l][k] !== undefined) el.innerHTML = T[l][k]; }); }
+    document.getElementById('ben').onclick = () => setLang('en'); document.getElementById('bar').onclick = () => setLang('ar'); setLang('en');
+  </script>
+</body>
 
-    <script src="js/animations.js" defer></script>
-    <script src="js/main.js" defer></script>
-    <script>
-      // Simple translation system
-      const translations = {
-        ar: {
-          pageTitle: "مركز طيبة الطبي - TMC | ان بي اي جي للتطوير",
-          metaDescription:
-            "مركز طيبة الطبي (TMC) من ان بي اي جي للتطوير – وجهة متكاملة للعيادات الطبية المتخصصة والمساحات التجارية في 6 أكتوبر.",
-          metaKeywords:
-            "مركز طيبة الطبي, TMC, عيادات طبية, ان بي اي جي للتطوير, 6 أكتوبر, عقارات رعاية صحية, مركز تجاري طبي",
-          ogTitle: "مركز طيبة الطبي - TMC",
-          ogDescription:
-            "مركز تجاري طبي متكامل يجمع بين العيادات الطبية والمساحات التجارية في 6 أكتوبر من ان بي اي جي للتطوير.",
-          navServices: "الخدمات",
-          navProjects: "المشاريع",
-          navAbout: "عن الشركة",
-          navContact: "اتصل بنا",
-          heroTitle: "مركز طيبة الطبي - TMC",
-          heroSubtitle:
-            "أول مول طبي تجاري متكامل يجمع بين العيادات المتخصصة والمساحات التجارية",
-          location: "6 أكتوبر",
-          projectType: "عيادات طبية ومساحات تجارية",
-          quality: "جودة ممتازة",
-          callNowBtn: "اتصل الآن",
-          whatsappBtn: "واتساب",
-          overviewTitle: "نظرة عامة على المشروع",
-          overviewText1:
-            "مركز طيبة الطبي (TMC) هو أول مول طبي تجاري متكامل في المنطقة يجمع بين العيادات الطبية المتخصصة والمساحات التجارية المتنوعة. تم تطويره بواسطة شركة NBIG Developments، التي تمتلك أكثر من 13 عامًا من الخبرة في تصميم وتنفيذ المشروعات السكنية والتجارية والإدارية في مصر والإمارات. يهدف المشروع إلى تلبية احتياجات الأطباء والمستثمرين والمرضى والزوار.",
-          overviewListItem1: "يقع في موقع استراتيجي وتصميم عصري.",
-          overviewListItem2:
-            "يوفر تجربة فريدة تجمع بين الرعاية الصحية والتسوق.",
-          overviewListItem3: "يضم 50 عيادة طبية، صيدلية، و2 معمل تحاليل.",
-          overviewListItem4: "يوجد به مركز أشعة وميني ماركت وكافيه.",
-          featuresTitle: "الميزات والمرافق",
-          featuresDesc:
-            "يقدم المشروع خدمات ومرافق مصممة لراحة الأطباء والمرضى والزوار.",
-          feature1Title: "تطبيق جوال متكامل",
-          feature1Desc:
-            "لتسهيل حجز المواعيد والاستشارات عن بعد ومتابعة السجلات الطبية.",
-          feature2Title: "عيادات مجهزة",
-          feature2Desc:
-            "عيادات كاملة التشطيب ومكيفة لتناسب جميع التخصصات الطبية.",
-          feature3Title: "استقبال مركزي",
-          feature3Desc:
-            "استقبال مركزي في كل طابق لتسهيل الوصول للمرضى والزوار.",
-          feature4Title: "مواقف سيارات",
-          feature4Desc: "مواقف وساحات انتظار لضمان سهولة الوصول.",
-          feature5Title: "واي فاي مركزي",
-          feature5Desc: "شبكة إنترنت عالية السرعة تغطي المول بالكامل.",
-          feature6Title: "عزل صوت وغبار",
-          feature6Desc: "واجهات معزولة بالكامل للحفاظ على بيئة هادئة ونظيفة.",
-          locationTitle: "الموقع الاستراتيجي",
-          locationSubtitle: "مدينة 6 أكتوبر",
-          locationDesc:
-            "يقع مركز طيبة الطبي في مدينة 6 أكتوبر، خلف مول العرب ومحور جمال عبد الناصر. يقع المشروع في منطقة النوادي والقصور، على بعد خطوات من الممشى السياحي، ومحور جمال عبد الناصر. كما أنه يقع بجوار أكبر المجمعات السكنية ويحيط به أكثر من 35 كمبوند سكني.",
-          locationListItem1: "بالقرب من مول العرب ونادي 6 أكتوبر ونادي الصيد.",
-          locationListItem2: "قريب من محور البوليفارد ومحور 26 يوليو.",
-          locationListItem3:
-            "بالقرب من جامعات ومدارس مثل جامعة مصر للعلوم والتكنولوجيا.",
-          locationListItem4: "موقع يضمن سهولة الوصول وزيادة الطلب على الخدمات.",
-          unitsAndServicesTitle: "الوحدات والخدمات الطبية",
-          unitsAndServicesDesc:
-            "يتميز المشروع بتنوع وحداته ومرافقه لتلبية كافة الاحتياجات الطبية والتجارية.",
-          unitsAndServicesItem1: "عدد العيادات الطبية: 50 عيادة.",
-          unitsAndServicesItem2: "صيدلية متكاملة.",
-          unitsAndServicesItem3: "مركز أشعة ومعملان للتحاليل الطبية.",
-          unitsAndServicesItem4: "وحدات تجارية بمساحات مختلفة.",
-          unitsAndServicesItem5: "مركز لياقة بدنية وصحة.",
-          brochureTitle: "كتيب المشروع",
-          brochureDesc:
-            "تنزيل الملف التعريفي الكامل لمشروع مركز طيبة الطبي بصيغة PDF",
-          viewPdfBtn: "عرض PDF",
-          ctaTitle: "جاهز لإطلاق عيادتك الطبية؟",
-          ctaDesc:
-            "اتصل بنا اليوم لمعرفة المزيد عن مركز طيبة الطبي وتأمين مساحتك. استثمر في عقار يجمع بين الرعاية الصحية والتسوق في بيئة تكنولوجية متطورة.",
-          ctaCallBtn: "اتصل الآن",
-          ctaWhatsAppBtn: "واتساب",
-          ctaContactBtn: "اتصل بنا",
-          copyright:
-            "© 2025 NBIG Developments. جميع الحقوق محفوظة. | <a href='index.html'>العودة إلى الصفحة الرئيسية</a>",
-        },
-        en: {
-          pageTitle: "Tiba Med Center - TMC | NBIG Developments",
-          metaDescription:
-            "Tiba Med Center (TMC) by NBIG Developments – An integrated destination for specialized medical clinics and commercial spaces in 6th of October.",
-          metaKeywords:
-            "Tiba Med Center, TMC, Medical Clinics, NBIG Developments, 6th of October, Healthcare Real Estate, Medical Mall",
-          ogTitle: "Tiba Med Center - TMC",
-          ogDescription:
-            "An integrated medical mall combining clinics and commercial spaces in 6th of October by NBIG Developments.",
-          navServices: "Services",
-          navProjects: "Projects",
-          navAbout: "About Us",
-          navContact: "Contact",
-          heroTitle: "TMC - Tiba Med Center",
-          heroSubtitle:
-            "The first integrated medical mall combining specialized clinics and commercial spaces",
-          location: "6th of October",
-          projectType: "Medical Clinics & Commercial Spaces",
-          quality: "Premium Quality",
-          callNowBtn: "Call Now",
-          whatsappBtn: "WhatsApp",
-          overviewTitle: "Project Overview",
-          overviewText1:
-            "Tiba Med Center (TMC) is the first integrated medical mall in the area, combining specialized medical clinics and diverse commercial spaces. Developed by NBIG Developments, with over 13 years of experience in residential, commercial, and administrative projects in Egypt and the UAE. The project aims to meet the needs of doctors, investors, patients, and visitors.",
-          overviewListItem1: "Strategic location and modern design.",
-          overviewListItem2:
-            "Unique experience combining healthcare and shopping.",
-          overviewListItem3:
-            "Includes 50 medical clinics, a pharmacy, and 2 labs.",
-          overviewListItem4:
-            "Features a radiology center, mini market, and café.",
-          featuresTitle: "Features & Facilities",
-          featuresDesc:
-            "The project offers services and facilities designed for the comfort of doctors, patients, and visitors.",
-          feature1Title: "Integrated Mobile App",
-          feature1Desc:
-            "For easy appointment booking, remote consultations, and medical records tracking.",
-          feature2Title: "Equipped Clinics",
-          feature2Desc:
-            "Fully finished and air-conditioned clinics for all medical specialties.",
-          feature3Title: "Central Reception",
-          feature3Desc:
-            "Central reception on each floor for easy access for patients and visitors.",
-          feature4Title: "Parking Spaces",
-          feature4Desc: "Parking and waiting areas for easy access.",
-          feature5Title: "Central Wi-Fi",
-          feature5Desc: "High-speed internet network covering the entire mall.",
-          feature6Title: "Sound & Dust Insulation",
-          feature6Desc:
-            "Fully insulated facades for a quiet and clean environment.",
-          locationTitle: "Strategic Location",
-          locationSubtitle: "6th of October City",
-          locationDesc:
-            "Tiba Med Center is located in 6th of October City, behind Mall of Arabia and Gamal Abdel Nasser Axis. The project is in the clubs and palaces area, steps away from the tourist walkway and Gamal Abdel Nasser Axis. It is next to the largest residential complexes and surrounded by more than 35 compounds.",
-          locationListItem1:
-            "Near Mall of Arabia, 6th of October Club, and Shooting Club.",
-          locationListItem2: "Close to Boulevard Axis and July 26 Axis.",
-          locationListItem3: "Near universities and schools like MUST.",
-          locationListItem4:
-            "Location ensures easy access and high demand for services.",
-          unitsAndServicesTitle: "Units & Medical Services",
-          unitsAndServicesDesc:
-            "The project features a variety of units and facilities to meet all medical and commercial needs.",
-          unitsAndServicesItem1: "Number of medical clinics: 50 clinics.",
-          unitsAndServicesItem2: "Integrated pharmacy.",
-          unitsAndServicesItem3: "Radiology center and two labs.",
-          unitsAndServicesItem4: "Commercial units with different spaces.",
-          unitsAndServicesItem5: "Fitness and wellness center.",
-          brochureTitle: "Project Brochure",
-          brochureDesc:
-            "Download the full Tiba Med Center brochure in PDF format",
-          viewPdfBtn: "View PDF",
-          ctaTitle: "Ready to launch your clinic?",
-          ctaDesc:
-            "Contact us today to learn more about Tiba Med Center and secure your space. Invest in a property that combines healthcare and shopping in a modern tech environment.",
-          ctaCallBtn: "Call Now",
-          ctaWhatsAppBtn: "WhatsApp",
-          ctaContactBtn: "Contact Us",
-          copyright:
-            "© 2025 NBIG Developments. All rights reserved. | <a href='index.html'>Back to Home</a>",
-        },
-      };
-
-      function setLanguage(lang) {
-        document.documentElement.lang = lang === "ar" ? "ar" : "en";
-        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-        document
-          .getElementById("lang-en")
-          .classList.toggle("active", lang === "en");
-        document
-          .getElementById("lang-ar")
-          .classList.toggle("active", lang === "ar");
-        document.querySelectorAll("[data-translate]").forEach((el) => {
-          const key = el.getAttribute("data-translate");
-          if (translations[lang][key]) {
-            if (el.tagName === "TITLE") {
-              document.title = translations[lang][key];
-            } else {
-              el.innerHTML = translations[lang][key];
-            }
-          }
-        });
-        // meta tags
-        document
-          .querySelector('meta[name="description"]')
-          .setAttribute("content", translations[lang].metaDescription);
-        document
-          .querySelector('meta[name="keywords"]')
-          .setAttribute("content", translations[lang].metaKeywords);
-        document
-          .querySelector('meta[property="og:title"]')
-          .setAttribute("content", translations[lang].ogTitle);
-        document
-          .querySelector('meta[property="og:description"]')
-          .setAttribute("content", translations[lang].ogDescription);
-      }
-
-      document.getElementById("lang-en").onclick = () => setLanguage("en");
-      document.getElementById("lang-ar").onclick = () => setLanguage("ar");
-      window.addEventListener("DOMContentLoaded", () => setLanguage("en"));
-
-      window.addEventListener("load", function () {
-        var loader = document.getElementById("loader-overlay");
-        if (loader) loader.style.display = "none";
-      });
-    </script>
-  </body>
 </html>

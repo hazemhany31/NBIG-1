@@ -18,25 +18,40 @@ $message = trim($_POST['message'] ?? '');
 
 // تحقق من الحقول
 if (!$name || !$email || !$number) {
-    echo json_encode(['success' => false, 'message' => 'Please fill all required fields.']);
-    exit;
+  echo json_encode(['success' => false, 'message' => 'Please fill all required fields.']);
+  exit;
 }
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode(['success' => false, 'message' => 'Invalid email address.']);
-    exit;
+  echo json_encode(['success' => false, 'message' => 'Invalid email address.']);
+  exit;
 }
 
 $mail = new PHPMailer(true);
 
 try {
-    $mail->CharSet = 'UTF-8';
-    $mail->setFrom('info@new-build-egypt.com', 'New Build Website');
-    $mail->addAddress('info@new-build-egypt.com');
-    $mail->addReplyTo($email, $name);
+  $mail->isSMTP();
+  $mail->Host = 'mail.new-build-egypt.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'info@new-build-egypt.com';
+  $mail->Password = 'SLHEzvx3UmjWYzf';
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  $mail->Port = 587;
+  $mail->SMTPOptions = [
+    'ssl' => [
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+      'allow_self_signed' => true,
+    ]
+  ];
 
-    $mail->isHTML(true);
-    $mail->Subject = "📧 New Message from New Build Website";
-    $mail->Body = '
+  $mail->CharSet = 'UTF-8';
+  $mail->setFrom('info@new-build-egypt.com', 'New Build Website');
+  $mail->addAddress('info@new-build-egypt.com');
+  $mail->addReplyTo($email, $name);
+
+  $mail->isHTML(true);
+  $mail->Subject = "📧 New Message from New Build Website";
+  $mail->Body = '
     <html lang="en" dir="ltr">
     <head><meta charset="UTF-8"></head>
     <body style="background:#f6f7fa;padding:30px;">
@@ -57,12 +72,12 @@ try {
             <span style="color:#0078d4;font-weight:600;">Number 📱</span>
             <div style="background:#f7fafd;border-radius:10px;padding:12px 18px;margin-top:6px;border-left:4px solid #0078d4;">' . htmlspecialchars($number) . '</div>
           </div>'
-        . ($message ? '
+    . ($message ? '
           <div style="margin-bottom:18px;">
             <span style="color:#d4af37;font-weight:600;">Message 💬</span>
             <div style="background:#fffbe7;border-radius:10px;padding:12px 18px;margin-top:6px;border-left:4px solid #ffc107;">' . nl2br(htmlspecialchars($message)) . '</div>
           </div>' : '') .
-        '</div>
+    '</div>
         <div style="background:#f6f7fa;padding:18px 0 8px 0;text-align:center;color:#888;font-size:1rem;border-top:1px solid #eee;">
           Sent from New Build Website<br>
           <span style="color:#0078d4;font-size:1.1em;">Date & Time: ' . date("Y-m-d H:i:s") . '</span>
@@ -72,16 +87,30 @@ try {
     </html>
     ';
 
-    $mail->send();
+  $mail->send();
 
-    // إرسال رسالة تأكيد عربية للمستخدم
-    $userMail = new PHPMailer(true);
-    $userMail->CharSet = 'UTF-8';
-    $userMail->setFrom('info@new-build-egypt.com', 'NBIG Contact Form');
-    $userMail->addAddress($email, $name);
-    $userMail->isHTML(true);
-    $userMail->Subject = "شكراً لك - تم استلام رسالتك";
-    $userMail->Body = '
+  // إرسال رسالة تأكيد عربية للمستخدم
+  $userMail = new PHPMailer(true);
+  $userMail->isSMTP();
+  $userMail->Host = 'mail.new-build-egypt.com';
+  $userMail->SMTPAuth = true;
+  $userMail->Username = 'info@new-build-egypt.com';
+  $userMail->Password = 'SLHEzvx3UmjWYzf';
+  $userMail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+  $userMail->Port = 587;
+  $userMail->SMTPOptions = [
+    'ssl' => [
+      'verify_peer' => false,
+      'verify_peer_name' => false,
+      'allow_self_signed' => true,
+    ]
+  ];
+  $userMail->CharSet = 'UTF-8';
+  $userMail->setFrom('info@new-build-egypt.com', 'NBIG Contact Form');
+  $userMail->addAddress($email, $name);
+  $userMail->isHTML(true);
+  $userMail->Subject = "شكراً لك - تم استلام رسالتك";
+  $userMail->Body = '
     <html dir="rtl" lang="ar">
     <head>
         <meta charset="UTF-8">
@@ -108,10 +137,10 @@ try {
     </html>
     ';
 
-    $userMail->send();
+  $userMail->send();
 
-    echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully!']);
+  echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully!']);
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Failed to send: ' . $mail->ErrorInfo]);
+  echo json_encode(['success' => false, 'message' => 'Failed to send: ' . $mail->ErrorInfo]);
 }
 ?>
